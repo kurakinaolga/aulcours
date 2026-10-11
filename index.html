@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>aulcours — авторские материалы по французскому</title>
+<meta name="description" content="Авторские материалы по французскому: для учеников и для преподавателей, по уровням A1–B2.">
+<meta property="og:title" content="aulcours — авторские материалы по французскому">
+<meta property="og:description" content="Выучить французский — это плавание au long cours. Материалы по уровням для учеников и преподавателей.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aulcours.com/">
+<meta name="theme-color" content="#EFE6D6">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600&family=Lora:ital,wght@0,400;0,600;1,400&family=Mrs+Saint+Delafield&family=Mynerve&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sand:#EFE6D6; --paper:#F4F0E6; --card:#FBF8F1; --ink:#2B2622; --ink-soft:#4E4640;
+  --rose:#D9C3C1; --sable:#E3D3AE; --mer:#B9C7D0; --mer-line:#8FA5B3; --bleu:#2F4B8A; --terre:#8E5E50;
+  --s3:#E9EDEE; --s4:#E2E8EA; --s5:#D6DFE3; --s6:#C9D4DA;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--sand);color:var(--ink);font-family:'Lora',Georgia,serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--ink)}
+a:hover{color:var(--bleu)}
+h1,h2,h3{font-family:'Comfortaa',system-ui,sans-serif;font-weight:600;margin:0}
+p{margin:0}
+.hand{font-family:'Mynerve',cursive;color:var(--bleu);display:inline-block;transform:rotate(-2deg);line-height:1.2}
+.sign{font-family:'Mrs Saint Delafield',cursive;color:var(--bleu);line-height:1}
+.fr{font-style:normal}
+.cut1{clip-path:polygon(2% 8%,97% 0,100% 90%,4% 100%)}
+.cut2{clip-path:polygon(0 3%,100% 10%,96% 100%,3% 94%)}
+.cut3{clip-path:polygon(4% 0,100% 5%,98% 96%,0 100%)}
+.btn{display:inline-block;font-family:'Comfortaa',sans-serif;font-size:16px;text-decoration:none;padding:15px 28px;border:0;cursor:pointer;text-align:center}
+.btn-dark{background:var(--ink);color:var(--paper)}
+.btn-dark:hover{color:var(--paper);background:#3d3631}
+.tilt-l{transform:rotate(-1.5deg)}
+.tag{display:inline-block;font-family:'Comfortaa',sans-serif;font-size:13px;padding:5px 12px;align-self:flex-start}
+.t-profs{background:var(--rose)} .t-eleves{background:var(--mer)} .t-tous{background:var(--sable)}
+.hl{display:inline-block;padding:2px 14px;transform:rotate(-2deg)}
+:focus-visible{outline:2px solid var(--bleu);outline-offset:3px}
+
+/* шапка */
+.top{background:var(--sand);padding:0 24px;position:sticky;top:0;z-index:10;border-bottom:1px solid rgba(43,38,34,.08)}
+.top-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:8px 0}
+.logo{display:block;line-height:0}
+.nav{display:flex;gap:30px;font-family:'Comfortaa',sans-serif;font-size:15px}
+.nav a{text-decoration:none;padding:6px 0}
+.burger{display:none;width:44px;height:44px;border:0;background:transparent;padding:0;cursor:pointer;align-items:center;justify-content:center}
+
+/* разделы */
+.sec{padding:56px 24px 96px;scroll-margin-top:70px}
+.wave{display:block;width:100%;height:60px}
+.inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:200px minmax(0,1fr);gap:32px}
+.marge{display:flex;flex-direction:column;gap:12px;border-right:1px solid rgba(43,38,34,.18);padding-right:20px;align-self:start}
+.marge .num{font-family:'Comfortaa',sans-serif;font-size:13px;letter-spacing:2px}
+.marge .hand{font-size:22px}
+.marge .note{font-size:13px;line-height:1.5;opacity:.8}
+.content{display:flex;flex-direction:column;gap:22px;min-width:0}
+.sec h2{font-size:34px;line-height:1.2}
+.intro{color:var(--ink-soft);max-width:620px}
+
+/* 01 */
+.s1{background:var(--sand);padding-top:48px}
+.s1 h1{font-size:clamp(32px,5vw,58px);line-height:1.18}
+.s1 .lead{font-size:19px;color:var(--ink-soft);max-width:600px}
+.s1 .me{font-size:15px;color:var(--ink-soft);max-width:560px;padding-left:14px;border-left:2px solid var(--mer)}
+.s1 .me a{font-family:'Comfortaa',sans-serif;font-size:14px;white-space:nowrap}
+.s1 .row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.s1 .sign{font-size:52px;margin-left:8px}
+
+/* 02 редакции */
+.s2{background:var(--paper)}
+.editions{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.edition{background:var(--card);padding:30px;display:flex;flex-direction:column;gap:16px}
+.edition h3{font-size:26px}
+.edition .who{color:var(--ink-soft);font-size:16px}
+.rubs{list-style:none;margin:0;padding:0}
+.rubs li{display:flex;gap:16px;align-items:center;padding:14px 0;border-top:1px solid rgba(43,38,34,.12)}
+.rubs svg{flex:0 0 48px;width:48px;height:48px}
+.rubs b{display:block;font-family:'Comfortaa',sans-serif;font-weight:600;font-size:17px}
+.rubs span{font-size:15px;color:var(--ink-soft)}
+.edition .go{font-family:'Comfortaa',sans-serif;font-size:15px}
+
+/* 03 материалы */
+.s3{background:var(--s3)}
+.filters{display:flex;flex-direction:column;gap:12px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{font-family:'Comfortaa',sans-serif;font-size:15px;padding:10px 18px;border:0;background:var(--card);color:var(--ink);cursor:pointer;min-height:44px}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.chip:nth-child(odd){transform:rotate(1.2deg)} .chip:nth-child(even){transform:rotate(-1.2deg)}
+.chips-label{font-size:13px;color:var(--ink-soft)}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.card{display:flex;flex-direction:column;gap:10px}
+.cover{aspect-ratio:3/4;background:var(--card);position:relative;overflow:hidden;padding:20px}
+.cover svg{position:absolute;inset:0;width:100%;height:100%}
+.cover h3{position:relative;font-size:22px;line-height:1.2}
+.cover .hand{position:relative;font-size:18px;margin-top:6px;display:block;transform:none}
+.card .rub{font-size:14px;color:var(--ink-soft);font-style:italic}
+.soon{font-family:'Mynerve',cursive;color:var(--bleu);font-size:18px}
+.empty{padding:28px;background:var(--card);color:var(--ink-soft)}
+.swipe-hint{display:none}
+
+/* 04 feuilleton */
+.s4{background:var(--s4)}
+.feuil{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:32px;align-items:center}
+.feuil .text{display:flex;flex-direction:column;gap:16px}
+.chapters{display:flex;gap:10px;align-items:flex-end}
+.chapters svg{flex:1;height:auto}
+
+/* 05 стоянка */
+.s5{background:var(--s5)}
+
+/* 06 капитан */
+.s6{background:var(--s6)}
+.captain{display:flex;flex-wrap:wrap;gap:40px;align-items:center}
+.portrait{flex:0 0 220px;height:270px;position:relative}
+.portrait .back{position:absolute;inset:-8px;background:var(--sable);transform:rotate(4deg)}
+.portrait .front{position:absolute;inset:0;background:var(--card);transform:rotate(-2deg);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.portrait img{width:100%;height:100%;object-fit:cover}
+.captain .text{flex:1 1 300px;display:flex;flex-direction:column;gap:12px}
+.captain p{color:#2E3A42}
+.captain .sign{font-size:50px}
+
+/* 07 подвал */
+.foot{background:var(--bleu);color:var(--paper);padding:48px 24px 56px;position:relative;overflow:hidden}
+.foot .marge{border-color:rgba(244,240,230,.3)}
+.foot .marge .hand{color:#DCE3E6}
+.foot a{color:var(--paper)}
+.foot .word{font-family:'Mynerve',cursive;font-weight:400;font-size:38px;line-height:1.1}
+.foot .links{display:flex;flex-wrap:wrap;gap:22px;font-family:'Comfortaa',sans-serif;font-size:14px}
+.foot .algue{position:absolute;right:8%;bottom:0;width:110px;height:auto}
+
+/* телефон */
+@media (max-width:760px){
+  body{font-size:16px}
+  .nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--sand);flex-direction:column;gap:0;padding:4px 24px 16px;border-bottom:1px solid rgba(43,38,34,.15)}
+  .nav.open{display:flex}
+  .nav a{padding:13px 0;font-size:17px}
+  .burger{display:flex}
+  .sec{padding:28px 20px 56px}
+  .wave{height:30px}
+  .inner{grid-template-columns:1fr;gap:18px}
+  .marge{flex-direction:row;align-items:center;gap:10px;border-right:0;border-bottom:1px solid rgba(43,38,34,.18);padding:0 0 10px}
+  .marge .note{display:none}
+  .marge .hand{font-size:19px}
+  .marge svg{margin-left:auto;width:42px;height:auto}
+  .foot .marge svg{display:none}
+  .sec h2{font-size:25px}
+  .s1 .row{flex-direction:column;align-items:stretch}
+  .s1 .sign{font-size:44px;text-align:right;margin:0}
+  .editions{grid-template-columns:1fr}
+  .edition{padding:22px}
+  .chips{flex-wrap:nowrap;overflow-x:auto;margin:0 -20px;padding:2px 20px 4px;scrollbar-width:none}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{flex:0 0 auto}
+  .cards{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin:0 -20px;padding:0 20px 6px;scrollbar-width:none}
+  .cards::-webkit-scrollbar{display:none}
+  .card{flex:0 0 74%;scroll-snap-align:start}
+  .swipe-hint{display:block;font-size:15px}
+  .feuil{grid-template-columns:1fr}
+  .portrait{margin:0 auto}
+  .btn{width:100%}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <a href="#" class="logo" aria-label="aulcours — на главную">
+      <svg width="140" height="58" viewBox="30 0 360 175" role="img" aria-label="aulcours">
+        <path d="M172 150 C 170 120, 173 106, 170 88 C 156 90, 144 80, 148 72 C 158 70, 166 76, 169 80 C 168 64, 158 56, 156 42 C 164 38, 169 48, 170 58 C 172 44, 168 26, 176 12 C 184 20, 180 38, 173 56 C 180 48, 192 44, 199 49 C 195 61, 184 65, 172 70 C 174 92, 171 122, 175 150 Z" fill="#2F4B8A"/>
+        <text x="160" y="140" text-anchor="end" font-family="Mynerve, cursive" font-size="62" fill="#2B2622">au</text>
+        <text x="188" y="140" font-family="Mynerve, cursive" font-size="62" fill="#2B2622">cours</text>
+        <path d="M40 162 C 80 152, 120 170, 160 160 C 200 150, 240 168, 280 158 C 320 148, 350 162, 370 156" fill="none" stroke="#8FA5B3" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+    </a>
+    <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="menu">
+      <svg width="26" height="18" viewBox="0 0 26 18" aria-hidden="true"><g stroke="#2B2622" stroke-width="2" stroke-linecap="round"><line x1="1" y1="2" x2="25" y2="1"/><line x1="1" y1="9" x2="25" y2="9"/><line x1="1" y1="16" x2="25" y2="17"/></g></svg>
+    </button>
+    <nav class="nav" id="menu" aria-label="Основное меню">
+      <a href="#materiaux" data-aud="profs">profs</a>
+      <a href="#materiaux" data-aud="eleves">élèves</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- 01 · le rivage -->
+<section class="sec s1">
+  <div class="inner">
+    <div class="marge">
+      <span class="num">01</span>
+      <svg width="90" height="70" viewBox="0 0 120 100" aria-hidden="true"><path d="M20 62 C 20 26, 100 26, 100 62 Z" fill="#E3D3AE"/><path d="M0 100 L 0 66 C 20 58, 40 72, 60 64 C 80 56, 100 70, 120 62 L 120 100 Z" fill="#B9C7D0"/></svg>
+      <span class="hand">le rivage</span>
+      <span class="note">берег: отсюда начинается плавание</span>
+    </div>
+    <div class="content">
+      <h1>Выучить французский — это плавание <span class="hl cut3 fr" style="background:#B9C7D0">au long cours</span></h1>
+      <p class="lead">Авторские материалы для тех, кто учит язык, и для тех, кто его преподаёт. Всё, что стоит взять с собой в долгий путь.</p>
+      <div class="row">
+        <a href="#editions" class="btn btn-dark cut2 tilt-l">Отправиться в путь</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1280 60" preserveAspectRatio="none" aria-hidden="true" style="background:#EFE6D6"><path d="M0 60 L 0 30 C 160 10, 320 46, 520 26 C 720 6, 900 42, 1100 22 C 1180 14, 1240 24, 1280 20 L 1280 60 Z" fill="#F4F0E6"/></svg>
+
+<!-- 02 · le cap -->
+<section class="sec s2" id="editions">
+  <div class="inner">
+    <div class="marge">
+      <span class="num">02</span>
+      <svg width="80" height="74" viewBox="0 0 110 100" aria-hidden="true"><path d="M52 4 L 52 76 L 14 76 Z" fill="#D9C3C1"/><path d="M58 20 L 58 76 L 90 76 Z" fill="#E3D3AE"/><path d="M0 100 L 0 84 C 18 78, 36 90, 55 84 C 74 78, 92 88, 110 82 L 110 100 Z" fill="#B9C7D0"/></svg>
+      <span class="hand">le cap</span>
+      <span class="note">курс: кто вы на этом корабле?</span>
+    </div>
+    <div class="content">
+      <h2>Две редакции</h2>
+      <div class="editions">
+
+        <div class="edition" id="profs">
+          <span class="tag t-profs cut2" style="transform:rotate(2deg)">profs</span>
+          <h3>Я преподаю</h3>
+          <p class="who">Готовые задания и сценарии для урока</p>
+          <ul class="rubs">
+            <li><svg viewBox="0 0 120 90" aria-hidden="true"><circle cx="44" cy="45" r="34" fill="#D9C3C1"/><circle cx="76" cy="45" r="34" fill="#B9C7D0" fill-opacity=".8"/></svg><div><b class="fr">La conversation</b><span>сценарии разговорных клубов и ателье</span></div></li>
+            <li><svg viewBox="0 0 90 90" aria-hidden="true"><rect x="0" y="0" width="30" height="30" fill="#D9C3C1"/><rect x="60" y="0" width="30" height="30" fill="#E3D3AE"/><rect x="30" y="30" width="30" height="30" fill="#D9C3C1"/><rect x="0" y="60" width="30" height="30" fill="#E3D3AE"/><rect x="60" y="60" width="30" height="30" fill="#D9C3C1"/></svg><div><b class="fr">Les jeux</b><span>игры для урока</span></div></li>
+            <li><svg viewBox="0 0 90 90" aria-hidden="true"><rect x="10" y="6" width="70" height="78" fill="#D9C3C1" transform="rotate(4 45 45)"/><g stroke="#FBF8F1" stroke-width="4" stroke-linecap="round"><line x1="22" y1="28" x2="68" y2="30"/><line x1="21" y1="44" x2="67" y2="46"/><line x1="20" y1="60" x2="58" y2="62"/></g></svg><div><b class="fr">Les leçons</b><span>готовые задания для урока по темам и уровням</span></div></li>
+          </ul>
+          <a href="#materiaux" class="go" data-aud="profs">Материалы для преподавателей →</a>
+        </div>
+
+        <div class="edition" id="eleves">
+          <span class="tag t-eleves cut1" style="transform:rotate(-3deg)">élèves</span>
+          <h3>Я учу французский</h3>
+          <p class="who">Самостоятельная отработка между уроками</p>
+          <ul class="rubs">
+            <li><svg viewBox="0 0 80 100" aria-hidden="true"><path d="M40 98 C 38 80, 14 74, 8 52 C 4 34, 18 12, 40 2 C 60 14, 76 32, 72 54 C 66 76, 42 80, 40 98 Z" fill="#B9C7D0"/><path d="M40 92 C 40 70, 41 40, 40 12" fill="none" stroke="#FBF8F1" stroke-width="4" stroke-linecap="round"/></svg><div><b class="fr">Les cahiers</b><span>перевести грамматику и лексику в актив, с ключами</span></div></li>
+            <li><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="42" fill="none" stroke="#B9C7D0" stroke-width="10"/><circle cx="50" cy="50" r="22" fill="none" stroke="#E3D3AE" stroke-width="10"/><circle cx="50" cy="50" r="8" fill="#8FA5B3"/></svg><div><b class="fr">L’examen</b><span>подготовка к DELF и DALF</span></div></li>
+            <li><svg viewBox="0 0 130 90" aria-hidden="true"><path d="M0 90 L 0 50 C 0 25, 36 25, 36 50 L 36 90 Z" fill="#B9C7D0"/><path d="M47 90 L 47 50 C 47 25, 83 25, 83 50 L 83 90 Z" fill="#E3D3AE"/><path d="M94 90 L 94 50 C 94 25, 130 25, 130 50 L 130 90 Z" fill="#B9C7D0"/></svg><div><b class="fr">Le feuilleton</b><span>история по главам: читаешь и учишь</span></div></li>
+          </ul>
+          <a href="#materiaux" class="go" data-aud="eleves">Материалы для учеников →</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1280 60" preserveAspectRatio="none" aria-hidden="true" style="background:#F4F0E6"><path d="M0 60 L 0 26 C 180 8, 360 44, 560 24 C 760 4, 960 40, 1160 20 C 1220 14, 1260 20, 1280 18 L 1280 60 Z" fill="#E9EDEE"/></svg>
+
+<!-- 03 · la cargaison -->
+<section class="sec s3" id="materiaux">
+  <div class="inner">
+    <div class="marge">
+      <span class="num">03</span>
+      <svg width="74" height="62" viewBox="0 0 80 64" aria-hidden="true"><rect x="16" y="0" width="56" height="52" fill="#E3D3AE"/><rect x="8" y="6" width="56" height="52" fill="#D9C3C1"/><rect x="0" y="12" width="56" height="52" fill="#B9C7D0"/></svg>
+      <span class="hand">la cargaison</span>
+      <span class="note">груз на борту: материалы по уровням и темам</span>
+    </div>
+    <div class="content">
+      <h2>Материалы по уровням</h2>
+      <div class="filters">
+        <div class="chips" role="group" aria-label="Для кого">
+          <button class="chip cut2" type="button" data-aud="tous" aria-pressed="true">все</button>
+          <button class="chip cut1" type="button" data-aud="profs" aria-pressed="false">profs</button>
+          <button class="chip cut3" type="button" data-aud="eleves" aria-pressed="false">élèves</button>
+        </div>
+        <div class="chips" role="group" aria-label="Уровень">
+          <button class="chip cut2" type="button" data-level="A1" aria-pressed="true">A1</button>
+          <button class="chip cut1" type="button" data-level="A2" aria-pressed="false">A2</button>
+          <button class="chip cut3" type="button" data-level="B1" aria-pressed="false">B1</button>
+          <button class="chip cut2" type="button" data-level="B2" aria-pressed="false">B2</button>
+        </div>
+      </div>
+      <div class="cards" id="cards" aria-live="polite"></div>
+      <span class="hand swipe-hint">← листайте →</span>
+    </div>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1280 60" preserveAspectRatio="none" aria-hidden="true" style="background:#E9EDEE"><path d="M0 60 L 0 32 C 160 12, 340 48, 540 28 C 740 8, 920 44, 1120 24 C 1200 16, 1250 26, 1280 22 L 1280 60 Z" fill="#E2E8EA"/></svg>
+
+<!-- 04 · le feuilleton -->
+<section class="sec s4" id="feuilleton">
+  <div class="inner">
+    <div class="marge">
+      <span class="num">04</span>
+      <svg width="86" height="60" viewBox="0 0 130 90" aria-hidden="true"><path d="M0 90 L 0 50 C 0 25, 36 25, 36 50 L 36 90 Z" fill="#B9C7D0"/><path d="M47 90 L 47 50 C 47 25, 83 25, 83 50 L 83 90 Z" fill="#E3D3AE"/><path d="M94 90 L 94 50 C 94 25, 130 25, 130 50 L 130 90 Z" fill="#D9C3C1"/></svg>
+      <span class="hand">le feuilleton</span>
+      <span class="note">история по главам: каждая глава — новый порт</span>
+    </div>
+    <div class="content">
+      <div class="feuil">
+        <div class="text">
+          <span class="tag t-eleves cut3">скоро</span>
+          <h2>Сериал, в котором учишь язык</h2>
+          <p class="intro">История по главам для каждого уровня. В каждой главе — текст, слова и задания на грамматику темы. Читаешь, чтобы узнать, что будет дальше, и по пути отрабатываешь язык.</p>
+        </div>
+        <div class="chapters" aria-hidden="true">
+          <svg viewBox="0 0 80 120"><path d="M4 120 L 4 50 C 4 18, 76 18, 76 50 L 76 120 Z" fill="#B9C7D0"/><text x="40" y="96" text-anchor="middle" font-family="Comfortaa" font-size="22" fill="#2B2622">I</text></svg>
+          <svg viewBox="0 0 80 120"><path d="M4 120 L 4 50 C 4 18, 76 18, 76 50 L 76 120 Z" fill="#E3D3AE"/><text x="40" y="96" text-anchor="middle" font-family="Comfortaa" font-size="22" fill="#2B2622">II</text></svg>
+          <svg viewBox="0 0 80 120"><path d="M4 120 L 4 50 C 4 18, 76 18, 76 50 L 76 120 Z" fill="#D9C3C1"/><text x="40" y="96" text-anchor="middle" font-family="Comfortaa" font-size="22" fill="#2B2622">III</text></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1280 60" preserveAspectRatio="none" aria-hidden="true" style="background:#E2E8EA"><path d="M0 60 L 0 24 C 180 6, 380 42, 580 22 C 780 2, 980 38, 1180 18 C 1230 13, 1260 18, 1280 16 L 1280 60 Z" fill="#D6DFE3"/></svg>
+
+<!-- 05 · l'escale -->
+<section class="sec s5">
+  <div class="inner">
+    <div class="marge">
+      <span class="num">05</span>
+      <svg width="70" height="70" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="30" fill="none" stroke="#D9C3C1" stroke-width="10"/></svg>
+      <span class="hand">l’escale</span>
+      <span class="note">остановка в порту</span>
+    </div>
+    <div class="content">
+      <h2>Пока корабль снаряжается</h2>
+      <p class="intro">Материалы появляются постепенно. Чтобы не пропустить новые темы, заглядывайте в мой Telegram: там я пишу о французском, о преподавании и о том, что готовится здесь.</p>
+      <!-- ЗАМЕНИТЕ # на ссылку на ваш Telegram-канал, например https://t.me/ваш_канал -->
+      <a href="#" class="btn btn-dark cut2 tilt-l" style="align-self:flex-start">Мой Telegram</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<svg class="wave" viewBox="0 0 1280 60" preserveAspectRatio="none" aria-hidden="true" style="background:#D6DFE3"><path d="M0 60 L 0 26 C 180 8, 360 44, 560 24 C 760 4, 960 40, 1160 20 C 1220 14, 1260 20, 1280 18 L 1280 60 Z" fill="#2F4B8A"/></svg>
+
+<!-- 06 · les profondeurs -->
+<footer class="foot">
+  <svg class="algue" viewBox="0 0 70 110" aria-hidden="true"><path d="M35 108 C 33 90, 36 80, 34 70 C 20 72, 8 62, 12 54 C 22 52, 30 58, 33 62 C 32 50, 24 44, 22 34 C 30 30, 34 38, 35 46 C 37 36, 34 22, 40 12 C 48 18, 44 32, 38 46 C 44 40, 54 36, 60 40 C 56 50, 46 54, 37 58 C 38 74, 36 90, 38 108 Z" fill="#B9C7D0"/></svg>
+  <div class="inner" style="position:relative">
+    <div class="marge">
+      <span class="num">06</span>
+      <span class="hand">les profondeurs</span>
+    </div>
+    <div class="content">
+      <div class="word">au<span style="color:#B9C7D0">l</span>cours</div>
+      <div class="links">
+        <!-- ЗАМЕНИТЕ # на свои ссылки -->
+        <a href="#">Telegram</a>
+        <a href="#">Instagram</a>
+      </div>
+      <span class="hand" style="color:#DCE3E6;font-size:22px">à bientôt&nbsp;!</span>
+      <small style="opacity:.75">© <span id="year">2026</span> aulcours.com</small>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Темы — примеры. Замените на свои, когда материалы будут готовы.
+   aud: profs | eleves   rub: название рубрики
+   shape — знак рубрики: leaf (Les cahiers), target (L’examen), arches (Le feuilleton),
+                         circles (La conversation), checker (Les jeux), lines (Les leçons) */
+var THEMES = [
+  {level:"A1", fr:"Se présenter",   aud:"eleves", rub:"Les cahiers",      note:"bonjour\u00a0!",  shape:"leaf"},
+  {level:"A1", fr:"Au café",        aud:"profs",  rub:"La conversation",  note:"on parle\u00a0?", shape:"circles"},
+  {level:"A1", fr:"Ma famille",     aud:"profs",  rub:"Les jeux",         note:"on joue\u00a0!",  shape:"checker"},
+  {level:"A2", fr:"Le passé composé", aud:"eleves", rub:"Les cahiers",    note:"exercices\u00a0!",shape:"leaf"},
+  {level:"A2", fr:"En ville",       aud:"profs",  rub:"Les jeux",         note:"on joue\u00a0!",  shape:"checker"},
+  {level:"A2", fr:"Les vacances",   aud:"profs",  rub:"La conversation",  note:"on parle\u00a0?", shape:"circles"},
+  {level:"B1", fr:"DELF B1 · production orale", aud:"eleves", rub:"L’examen",         note:"courage\u00a0!",  shape:"target"},
+  {level:"B1", fr:"Le travail",     aud:"profs",  rub:"La conversation",  note:"on débat\u00a0?", shape:"circles"},
+  {level:"B1", fr:"Chapitre I",     aud:"eleves", rub:"Le feuilleton",    note:"la suite\u00a0?", shape:"arches"},
+  {level:"B2", fr:"Argumenter",     aud:"eleves", rub:"L’examen",         note:"courage\u00a0!",  shape:"target"},
+  {level:"B2", fr:"Les médias",     aud:"profs",  rub:"Les leçons",       note:"en classe",  shape:"lines"},
+  {level:"B2", fr:"Le subjonctif",  aud:"eleves", rub:"Les cahiers",      note:"exercices\u00a0!",shape:"leaf"}
+];
+var SHAPES = {
+  leaf:'<path d="M210 350 C 208 318, 176 308, 166 276 C 158 248, 182 214, 210 198 C 240 214, 262 244, 256 274 C 246 308, 214 318, 212 350 Z" fill="#B9C7D0"/><path d="M210 342 C 210 300, 211 260, 210 210" fill="none" stroke="#FBF8F1" stroke-width="4" stroke-linecap="round"/>',
+  checker:'<rect x="150" y="220" width="40" height="40" fill="#D9C3C1"/><rect x="230" y="220" width="40" height="40" fill="#E3D3AE"/><rect x="190" y="260" width="40" height="40" fill="#D9C3C1"/><rect x="150" y="300" width="40" height="40" fill="#E3D3AE"/><rect x="230" y="300" width="40" height="40" fill="#D9C3C1"/>',
+  target:'<circle cx="210" cy="280" r="60" fill="none" stroke="#B9C7D0" stroke-width="14"/><circle cx="210" cy="280" r="31" fill="none" stroke="#E3D3AE" stroke-width="14"/><circle cx="210" cy="280" r="10" fill="#8FA5B3"/>',
+  lines:'<rect x="150" y="220" width="110" height="130" fill="#D9C3C1" transform="rotate(4 205 285)"/><g stroke="#FBF8F1" stroke-width="4" stroke-linecap="round"><line x1="164" y1="252" x2="246" y2="256"/><line x1="163" y1="278" x2="245" y2="282"/><line x1="162" y1="304" x2="244" y2="308"/><line x1="161" y1="330" x2="220" y2="333"/></g>',
+  circles:'<circle cx="170" cy="290" r="54" fill="#D9C3C1"/><circle cx="214" cy="290" r="54" fill="#B9C7D0" fill-opacity=".8"/>',
+  arches:'<path d="M110 360 L 110 300 C 110 276, 146 276, 146 300 L 146 360 Z" fill="#B9C7D0"/><path d="M157 360 L 157 300 C 157 276, 193 276, 193 300 L 193 360 Z" fill="#E3D3AE"/><path d="M204 360 L 204 300 C 204 276, 240 276, 240 300 L 240 360 Z" fill="#D9C3C1"/>'
+};
+var LABEL = {profs:"profs", eleves:"élèves"};
+var cuts = ["cut1","cut2","cut3"];
+var state = {aud:"tous", level:"A1"};
+
+function render(){
+  var list = THEMES.filter(function(t){
+    return t.level === state.level && (state.aud === "tous" || t.aud === state.aud);
+  });
+  var box = document.getElementById("cards");
+  if (!list.length){
+    box.innerHTML = '<p class="empty">Для этого уровня материалы пока готовятся.</p>';
+    return;
+  }
+  box.innerHTML = list.map(function(t,i){
+    return '<article class="card">' +
+      '<div class="cover"><svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMax slice" aria-hidden="true">' +
+      '<path d="M0 400 L 0 370 C 50 360, 100 378, 150 368 C 200 358, 250 376, 300 366 L 300 400 Z" fill="#DCE3E6"/>' +
+      SHAPES[t.shape] + '</svg><h3 lang="fr">' + t.fr + '</h3><span class="hand">' + t.note + '</span></div>' +
+      '<span class="tag t-' + t.aud + ' ' + cuts[i % 3] + '">' + LABEL[t.aud] + ' · ' + t.level + '</span>' +
+      '<span class="rub fr" lang="fr">' + t.rub + '</span>' +
+      '<span class="soon">скоро</span>' +
+      '</article>';
+  }).join("");
+}
+
+function press(groupSel, btn){
+  document.querySelectorAll(groupSel).forEach(function(x){ x.setAttribute("aria-pressed","false"); });
+  btn.setAttribute("aria-pressed","true");
+}
+document.querySelectorAll(".chip[data-aud]").forEach(function(b){
+  b.addEventListener("click", function(){ state.aud = b.dataset.aud; press(".chip[data-aud]", b); render(); });
+});
+document.querySelectorAll(".chip[data-level]").forEach(function(b){
+  b.addEventListener("click", function(){ state.level = b.dataset.level; press(".chip[data-level]", b); render(); });
+});
+/* ссылки «Материалы для преподавателей / учеников» сразу включают нужный фильтр */
+document.querySelectorAll(".edition .go, .nav a[data-aud]").forEach(function(a){
+  a.addEventListener("click", function(){
+    var btn = document.querySelector('.chip[data-aud="' + a.dataset.aud + '"]');
+    if (btn) btn.click();
+  });
+});
+render();
+
+/* мобильное меню */
+var burger = document.querySelector(".burger"), menu = document.getElementById("menu");
+burger.addEventListener("click", function(){
+  var open = menu.classList.toggle("open");
+  burger.setAttribute("aria-expanded", open ? "true" : "false");
+});
+menu.querySelectorAll("a").forEach(function(a){
+  a.addEventListener("click", function(){ menu.classList.remove("open"); burger.setAttribute("aria-expanded","false"); });
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
