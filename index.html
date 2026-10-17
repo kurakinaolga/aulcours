@@ -99,6 +99,7 @@ p{margin:0}
 .cover h3{position:relative;font-size:22px;line-height:1.2}
 .cover .hand{position:relative;font-size:18px;margin-top:6px;display:block;transform:none}
 .card .rub{font-size:14px;color:var(--ink-soft);font-style:italic}
+.card .open{font-family:'Comfortaa',sans-serif;font-size:15px;padding:4px 0}
 .soon{font-family:'Mynerve',cursive;color:var(--bleu);font-size:18px}
 .empty{padding:28px;background:var(--card);color:var(--ink-soft)}
 .swipe-hint{display:none}
@@ -365,6 +366,8 @@ p{margin:0}
    shape — знак рубрики: leaf (Les cahiers), target (L’examen), arches (Le feuilleton),
                          circles (La conversation), checker (Les jeux), lines (Les leçons) */
 var THEMES = [
+  {level:"A1", fr:"Le présent",     aud:"eleves", rub:"Les cahiers · тренажёр", note:"à vous\u00a0!", shape:"leaf", href:"eleves/present/"},
+  {level:"A2", fr:"Le présent",     aud:"eleves", rub:"Les cahiers · тренажёр", note:"à vous\u00a0!", shape:"leaf", href:"eleves/present/"},
   {level:"A1", fr:"Se présenter",   aud:"eleves", rub:"Les cahiers",      note:"bonjour\u00a0!",  shape:"leaf"},
   {level:"A1", fr:"Au café",        aud:"profs",  rub:"La conversation",  note:"on parle\u00a0?", shape:"circles"},
   {level:"A1", fr:"Ma famille",     aud:"profs",  rub:"Les jeux",         note:"on joue\u00a0!",  shape:"checker"},
@@ -406,7 +409,7 @@ function render(){
       SHAPES[t.shape] + '</svg><h3 lang="fr">' + t.fr + '</h3><span class="hand">' + t.note + '</span></div>' +
       '<span class="tag t-' + t.aud + ' ' + cuts[i % 3] + '">' + LABEL[t.aud] + ' · ' + t.level + '</span>' +
       '<span class="rub fr" lang="fr">' + t.rub + '</span>' +
-      '<span class="soon">скоро</span>' +
+      (t.href ? '<a class="open" href="' + t.href + '">Открыть тренажёр →</a>' : '<span class="soon">скоро</span>') +
       '</article>';
   }).join("");
 }
@@ -429,6 +432,10 @@ document.querySelectorAll(".edition .go, .nav a[data-aud]").forEach(function(a){
   });
 });
 render();
+
+/* переход со страниц сайта: ?aud=profs или ?aud=eleves включает фильтр */
+var audParam = new URLSearchParams(location.search).get("aud");
+if (audParam) { var ab = document.querySelector('.chip[data-aud="' + audParam + '"]'); if (ab) ab.click(); }
 
 /* мобильное меню */
 var burger = document.querySelector(".burger"), menu = document.getElementById("menu");

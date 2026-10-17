@@ -1,0 +1,945 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le présent — тренажёр спряжения · aulcours</title>
+<meta name="description" content="Тренажёр спряжения французских глаголов в présent для уровней A1–A2: карточки с проверкой, ошибки возвращаются, таблица для самопроверки.">
+<meta property="og:title" content="Le présent — тренажёр спряжения · aulcours">
+<meta property="og:description" content="Спряжение французских глаголов в présent: тренажёр для A1–A2.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aulcours.com/eleves/present/">
+<meta name="theme-color" content="#EFE6D6">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600&family=Lora:ital,wght@0,400;0,600;1,400&family=Mrs+Saint+Delafield&family=Mynerve&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sand:#EFE6D6; --paper:#F4F0E6; --card:#FBF8F1; --ink:#2B2622; --ink-soft:#4E4640;
+  --rose:#D9C3C1; --sable:#E3D3AE; --mer:#B9C7D0; --mer-line:#8FA5B3; --bleu:#2F4B8A; --terre:#8E5E50;
+  --s3:#E9EDEE; --s4:#E2E8EA; --s5:#D6DFE3; --s6:#C9D4DA;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--sand);color:var(--ink);font-family:'Lora',Georgia,serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--ink)}
+a:hover{color:var(--bleu)}
+h1,h2,h3{font-family:'Comfortaa',system-ui,sans-serif;font-weight:600;margin:0}
+p{margin:0}
+.hand{font-family:'Mynerve',cursive;color:var(--bleu);display:inline-block;transform:rotate(-2deg);line-height:1.2}
+.sign{font-family:'Mrs Saint Delafield',cursive;color:var(--bleu);line-height:1}
+.fr{font-style:normal}
+.cut1{clip-path:polygon(2% 8%,97% 0,100% 90%,4% 100%)}
+.cut2{clip-path:polygon(0 3%,100% 10%,96% 100%,3% 94%)}
+.cut3{clip-path:polygon(4% 0,100% 5%,98% 96%,0 100%)}
+.btn{display:inline-block;font-family:'Comfortaa',sans-serif;font-size:16px;text-decoration:none;padding:15px 28px;border:0;cursor:pointer;text-align:center}
+.btn-dark{background:var(--ink);color:var(--paper)}
+.btn-dark:hover{color:var(--paper);background:#3d3631}
+.tilt-l{transform:rotate(-1.5deg)}
+.tag{display:inline-block;font-family:'Comfortaa',sans-serif;font-size:13px;padding:5px 12px;align-self:flex-start}
+.t-profs{background:var(--rose)} .t-eleves{background:var(--mer)} .t-tous{background:var(--sable)}
+.hl{display:inline-block;padding:2px 14px;transform:rotate(-2deg)}
+:focus-visible{outline:2px solid var(--bleu);outline-offset:3px}
+
+/* шапка */
+.top{background:var(--sand);padding:0 24px;position:sticky;top:0;z-index:10;border-bottom:1px solid rgba(43,38,34,.08)}
+.top-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:8px 0}
+.logo{display:block;line-height:0}
+.nav{display:flex;gap:30px;font-family:'Comfortaa',sans-serif;font-size:15px}
+.nav a{text-decoration:none;padding:6px 0}
+.burger{display:none;width:44px;height:44px;border:0;background:transparent;padding:0;cursor:pointer;align-items:center;justify-content:center}
+
+/* разделы */
+.sec{padding:56px 24px 96px;scroll-margin-top:70px}
+.wave{display:block;width:100%;height:60px}
+.inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:200px minmax(0,1fr);gap:32px}
+.marge{display:flex;flex-direction:column;gap:12px;border-right:1px solid rgba(43,38,34,.18);padding-right:20px;align-self:start}
+.marge .num{font-family:'Comfortaa',sans-serif;font-size:13px;letter-spacing:2px}
+.marge .hand{font-size:22px}
+.marge .note{font-size:13px;line-height:1.5;opacity:.8}
+.content{display:flex;flex-direction:column;gap:22px;min-width:0}
+.sec h2{font-size:34px;line-height:1.2}
+.intro{color:var(--ink-soft);max-width:620px}
+
+/* 01 */
+.s1{background:var(--sand);padding-top:48px}
+.s1 h1{font-size:clamp(32px,5vw,58px);line-height:1.18}
+.s1 .lead{font-size:19px;color:var(--ink-soft);max-width:600px}
+.s1 .me{font-size:15px;color:var(--ink-soft);max-width:560px;padding-left:14px;border-left:2px solid var(--mer)}
+.s1 .me a{font-family:'Comfortaa',sans-serif;font-size:14px;white-space:nowrap}
+.s1 .row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.s1 .sign{font-size:52px;margin-left:8px}
+
+/* 02 редакции */
+.s2{background:var(--paper)}
+.editions{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.edition{background:var(--card);padding:30px;display:flex;flex-direction:column;gap:16px}
+.edition h3{font-size:26px}
+.edition .who{color:var(--ink-soft);font-size:16px}
+.rubs{list-style:none;margin:0;padding:0}
+.rubs li{display:flex;gap:16px;align-items:center;padding:14px 0;border-top:1px solid rgba(43,38,34,.12)}
+.rubs svg{flex:0 0 48px;width:48px;height:48px}
+.rubs b{display:block;font-family:'Comfortaa',sans-serif;font-weight:600;font-size:17px}
+.rubs span{font-size:15px;color:var(--ink-soft)}
+.edition .go{font-family:'Comfortaa',sans-serif;font-size:15px}
+
+/* 03 материалы */
+.s3{background:var(--s3)}
+.filters{display:flex;flex-direction:column;gap:12px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{font-family:'Comfortaa',sans-serif;font-size:15px;padding:10px 18px;border:0;background:var(--card);color:var(--ink);cursor:pointer;min-height:44px}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.chip:nth-child(odd){transform:rotate(1.2deg)} .chip:nth-child(even){transform:rotate(-1.2deg)}
+.chips-label{font-size:13px;color:var(--ink-soft)}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.card{display:flex;flex-direction:column;gap:10px}
+.cover{aspect-ratio:3/4;background:var(--card);position:relative;overflow:hidden;padding:20px}
+.cover svg{position:absolute;inset:0;width:100%;height:100%}
+.cover h3{position:relative;font-size:22px;line-height:1.2}
+.cover .hand{position:relative;font-size:18px;margin-top:6px;display:block;transform:none}
+.card .rub{font-size:14px;color:var(--ink-soft);font-style:italic}
+.soon{font-family:'Mynerve',cursive;color:var(--bleu);font-size:18px}
+.empty{padding:28px;background:var(--card);color:var(--ink-soft)}
+.swipe-hint{display:none}
+
+/* 04 feuilleton */
+.s4{background:var(--s4)}
+.feuil{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:32px;align-items:center}
+.feuil .text{display:flex;flex-direction:column;gap:16px}
+.chapters{display:flex;gap:10px;align-items:flex-end}
+.chapters svg{flex:1;height:auto}
+
+/* 05 стоянка */
+.s5{background:var(--s5)}
+
+/* 06 капитан */
+.s6{background:var(--s6)}
+.captain{display:flex;flex-wrap:wrap;gap:40px;align-items:center}
+.portrait{flex:0 0 220px;height:270px;position:relative}
+.portrait .back{position:absolute;inset:-8px;background:var(--sable);transform:rotate(4deg)}
+.portrait .front{position:absolute;inset:0;background:var(--card);transform:rotate(-2deg);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.portrait img{width:100%;height:100%;object-fit:cover}
+.captain .text{flex:1 1 300px;display:flex;flex-direction:column;gap:12px}
+.captain p{color:#2E3A42}
+.captain .sign{font-size:50px}
+
+/* 07 подвал */
+.foot{background:var(--bleu);color:var(--paper);padding:48px 24px 56px;position:relative;overflow:hidden}
+.foot .marge{border-color:rgba(244,240,230,.3)}
+.foot .marge .hand{color:#DCE3E6}
+.foot a{color:var(--paper)}
+.foot .word{font-family:'Mynerve',cursive;font-weight:400;font-size:38px;line-height:1.1}
+.foot .links{display:flex;flex-wrap:wrap;gap:22px;font-family:'Comfortaa',sans-serif;font-size:14px}
+.foot .algue{position:absolute;right:8%;bottom:0;width:80px;height:auto}
+
+/* телефон */
+@media (max-width:760px){
+  body{font-size:16px}
+  .nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--sand);flex-direction:column;gap:0;padding:4px 24px 16px;border-bottom:1px solid rgba(43,38,34,.15)}
+  .nav.open{display:flex}
+  .nav a{padding:13px 0;font-size:17px}
+  .burger{display:flex}
+  .sec{padding:28px 20px 56px}
+  .wave{height:30px}
+  .inner{grid-template-columns:1fr;gap:18px}
+  .marge{flex-direction:row;align-items:center;gap:10px;border-right:0;border-bottom:1px solid rgba(43,38,34,.18);padding:0 0 10px}
+  .marge .note{display:none}
+  .marge .hand{font-size:19px}
+  .marge svg{margin-left:auto;width:42px;height:auto}
+  .foot .marge svg{display:none}
+  .sec h2{font-size:25px}
+  .s1 .row{flex-direction:column;align-items:stretch}
+  .s1 .sign{font-size:44px;text-align:right;margin:0}
+  .editions{grid-template-columns:1fr}
+  .edition{padding:22px}
+  .chips{flex-wrap:nowrap;overflow-x:auto;margin:0 -20px;padding:2px 20px 4px;scrollbar-width:none}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{flex:0 0 auto}
+  .cards{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin:0 -20px;padding:0 20px 6px;scrollbar-width:none}
+  .cards::-webkit-scrollbar{display:none}
+  .card{flex:0 0 74%;scroll-snap-align:start}
+  .swipe-hint{display:block;font-size:15px}
+  .feuil{grid-template-columns:1fr}
+  .portrait{margin:0 auto}
+  .btn{width:100%}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+<style>
+.back{font-family:'Comfortaa',sans-serif;font-size:15px;text-decoration:none;align-self:flex-start;padding:6px 0}
+.page{background:var(--s3);padding-top:40px}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <a href="../../" class="logo" aria-label="aulcours — на главную">
+      <svg width="140" height="58" viewBox="30 0 360 175" role="img" aria-label="aulcours">
+        <path d="M176.2 12.4 L175.4 13.4 L173.4 17.9 L171.1 27.2 L170.3 55.8 L169.9 55.4 L167.4 47.8 L165.9 45.2 L163.7 42.7 L161.8 41.7 L160.2 41.0 L157.7 41.2 L156.1 42.1 L156.8 46.8 L158.4 51.0 L167.2 70.0 L168.8 79.2 L168.3 79.2 L165.4 76.7 L162.0 74.3 L156.3 71.9 L153.2 71.5 L148.3 71.7 L147.6 72.6 L147.0 74.9 L147.4 77.1 L148.7 79.8 L150.6 82.4 L153.9 84.7 L160.2 87.3 L165.4 88.2 L169.3 88.1 L169.8 88.7 L171.1 102.4 L170.8 138.0 L171.2 149.0 L171.8 150.0 L175.6 149.7 L173.4 127.0 L173.0 89.5 L172.1 70.5 L172.8 69.7 L184.6 64.4 L190.4 60.5 L195.6 55.6 L198.7 49.6 L198.4 48.6 L194.2 46.9 L191.4 46.9 L187.1 47.3 L181.0 49.8 L173.5 54.9 L178.6 37.7 L180.4 27.5 L180.2 22.6 L179.6 18.5 L178.3 15.2 Z" fill="#2F4B8A"/>
+        <text x="160" y="140" text-anchor="end" font-family="Mynerve, cursive" font-size="62" fill="#2B2622">au</text>
+        <text x="188" y="140" font-family="Mynerve, cursive" font-size="62" fill="#2B2622">cours</text>
+        <path d="M40 162 C 80 152, 120 170, 160 160 C 200 150, 240 168, 280 158 C 320 148, 350 162, 370 156" fill="none" stroke="#8FA5B3" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+    </a>
+    <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="menu">
+      <svg width="26" height="18" viewBox="0 0 26 18" aria-hidden="true"><g stroke="#2B2622" stroke-width="2" stroke-linecap="round"><line x1="1" y1="2" x2="25" y2="1"/><line x1="1" y1="9" x2="25" y2="9"/><line x1="1" y1="16" x2="25" y2="17"/></g></svg>
+    </button>
+    <nav class="nav" id="menu" aria-label="Основное меню">
+      <a href="../../?aud=profs#materiaux">profs</a>
+      <a href="../../?aud=eleves#materiaux">élèves</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="sec page">
+  <div class="inner">
+    <div class="marge">
+      <svg width="64" height="80" viewBox="0 0 80 100" aria-hidden="true"><path d="M40 98 C 38 80, 14 74, 8 52 C 4 34, 18 12, 40 2 C 60 14, 76 32, 72 54 C 66 76, 42 80, 40 98 Z" fill="#B9C7D0"/><path d="M40 92 C 40 70, 41 40, 40 12" fill="none" stroke="#FBF8F1" stroke-width="4" stroke-linecap="round"/></svg>
+      <span class="hand">les cahiers</span>
+      <span class="note">тренажёр: отработать форму, пока не станет автоматической</span>
+    </div>
+    <div class="content">
+      <a href="../../#materiaux" class="back">← Материалы по уровням</a>
+<!--
+  aulcours · тренажёр «Le présent» (A1–A2)
+  Самодостаточный блок: вставляется в страницу целиком (style + section + script).
+  Шрифты Comfortaa, Lora и Mynerve уже подключены на aulcours.com.
+  Если вставляете на страницу без них, добавьте в <head>:
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600&family=Lora:ital,wght@0,400;0,600;1,400&family=Mynerve&display=swap" rel="stylesheet">
+  Все классы начинаются с aulc-, поэтому стили сайта и тренажёра не мешают друг другу.
+-->
+<style>
+.aulc{--paper:#F4F0E6;--card:#FBF8F1;--ink:#2B2622;--ink-soft:#4E4640;--rose:#D9C3C1;--sable:#E3D3AE;--mer:#B9C7D0;--mer-line:#8FA5B3;--bleu:#2F4B8A;--terre:#8E5E50;
+  font-family:'Lora',Georgia,serif;font-size:17px;line-height:1.6;color:var(--ink);max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:24px;min-width:0;text-align:left}
+.aulc *{box-sizing:border-box}
+.aulc [hidden]{display:none!important}
+.aulc h1,.aulc h2,.aulc h3{font-family:'Comfortaa',system-ui,sans-serif;font-weight:600;margin:0;line-height:1.25}
+.aulc h1,.aulc h2{font-size:34px}
+.aulc h3{font-size:20px}
+.aulc p,.aulc ul{margin:0}
+.aulc button{font:inherit;color:inherit;cursor:pointer}
+.aulc :focus-visible{outline:2px solid var(--bleu);outline-offset:3px}
+.aulc-c1{clip-path:polygon(2% 8%,97% 0,100% 90%,4% 100%)}
+.aulc-c2{clip-path:polygon(0 3%,100% 10%,96% 100%,3% 94%)}
+.aulc-c3{clip-path:polygon(4% 0,100% 5%,98% 96%,0 100%)}
+.aulc-hand{font-family:'Mynerve',cursive;color:var(--bleu);display:inline-block;transform:rotate(-2deg);line-height:1.2;font-size:20px;margin-right:8px}
+
+/* шапка */
+.aulc-head{display:flex;flex-direction:column;gap:12px}
+.aulc-tag{display:inline-block;align-self:flex-start;font-family:'Comfortaa',sans-serif;font-size:13px;padding:5px 12px;background:var(--mer);transform:rotate(-2deg)}
+.aulc-intro{color:var(--ink-soft);max-width:620px}
+
+/* счёт */
+.aulc-score{display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px;font-family:'Comfortaa',sans-serif;font-size:15px}
+.aulc-score b{font-weight:600;font-size:18px}
+.aulc-link{background:none;border:0;padding:10px 0;text-decoration:underline;text-underline-offset:3px;margin-left:auto;font-family:'Comfortaa',sans-serif!important;font-size:14px!important}
+.aulc-link:hover{color:var(--bleu)}
+
+/* карточка */
+.aulc-card{background:var(--card);padding:30px 30px 34px;display:flex;flex-direction:column;gap:16px;margin:0}
+.aulc-inf{font-family:'Comfortaa',sans-serif;font-weight:600;font-size:32px;line-height:1.2;word-break:break-word}
+.aulc-hint{font-size:15px;color:var(--ink-soft);padding-left:12px;border-left:2px solid var(--mer)}
+.aulc-row{display:flex;align-items:baseline;gap:10px;min-width:0}
+.aulc-subj{font-family:'Comfortaa',sans-serif;font-size:21px;white-space:nowrap}
+.aulc-subj.aulc-el{margin-right:-8px}
+.aulc-input{flex:1 1 auto;min-width:0;width:100%;font-family:'Lora',Georgia,serif;font-size:21px;color:var(--ink);padding:8px 10px;border:0;border-bottom:2px solid var(--mer-line);border-radius:0;background:var(--paper);-webkit-appearance:none;appearance:none}
+.aulc-input:focus{outline:none;border-bottom-color:var(--bleu)}
+.aulc-acc{display:flex;flex-wrap:wrap;gap:6px}
+.aulc-acc button{min-width:44px;min-height:44px;padding:0 6px;border:0;background:var(--paper);font-family:'Lora',Georgia,serif;font-size:20px;line-height:1;touch-action:manipulation}
+.aulc-acc button:hover{background:var(--sable)}
+.aulc-fb{min-height:28px;font-size:16px}
+.aulc-fb:empty{min-height:0}
+.aulc-fb.aulc-ok,.aulc-fb.aulc-almost,.aulc-fb.aulc-no{padding:10px 14px;background:var(--paper);border-left:3px solid var(--mer-line)}
+.aulc-fb.aulc-almost{border-left-color:var(--sable)}
+.aulc-fb.aulc-no{border-left-color:var(--terre)}
+.aulc-fb b{font-weight:600}
+.aulc-btn{align-self:flex-start;font-family:'Comfortaa',sans-serif;font-size:16px;padding:15px 30px;border:0;background:var(--ink);color:var(--paper)!important;transform:rotate(-1.5deg)}
+.aulc-btn:hover{background:#3d3631}
+.aulc-empty{background:var(--card);padding:28px;color:var(--ink-soft)}
+
+/* ошибки */
+.aulc-mist{display:flex;flex-direction:column;gap:10px}
+.aulc-mist ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:4px}
+.aulc-mist li{padding:6px 0;border-top:1px solid rgba(43,38,34,.12)}
+.aulc-mist li span{color:var(--ink-soft);font-size:14px;margin-left:6px}
+
+/* выбор глаголов */
+.aulc-pick{display:flex;flex-direction:column;gap:12px}
+.aulc-pick-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}
+.aulc-pick-btns{display:flex;gap:8px}
+.aulc-total{font-family:'Comfortaa',sans-serif;font-size:14px;color:var(--ink-soft)}
+.aulc-views{display:flex;flex-wrap:wrap;gap:8px}
+.aulc-view{border:0;background:var(--card);padding:10px 16px;min-height:44px;font-family:'Comfortaa',sans-serif!important;font-size:14px!important}
+.aulc-view[aria-pressed="true"]{background:var(--ink);color:var(--paper)!important}
+.aulc-pick-note{font-size:14px;color:var(--ink-soft)}
+.aulc-gname small{display:block;font-family:'Lora',Georgia,serif;font-size:14px;color:var(--ink-soft);margin-top:2px}
+.aulc-all{background:var(--card);padding:16px}
+.aulc-search{width:100%;font-family:'Lora',Georgia,serif;font-size:17px;color:var(--ink);padding:10px 12px;margin-bottom:14px;border:0;border-bottom:2px solid var(--mer-line);border-radius:0;background:var(--paper);-webkit-appearance:none;appearance:none}
+.aulc-search:focus{outline:none;border-bottom-color:var(--bleu)}
+.aulc-all .aulc-verbs{padding:0}
+.aulc-nofind{font-size:15px;color:var(--ink-soft)}
+.aulc-hard{display:flex;flex-direction:column;gap:10px}
+.aulc-hlist{list-style:none;padding:0;margin:0;max-height:290px;overflow-y:auto}
+.aulc-hlist:empty{display:none}
+.aulc-hlist li{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:7px 0;border-top:1px solid rgba(43,38,34,.12)}
+.aulc-env{font-family:'Comfortaa',sans-serif;font-size:12px;padding:3px 9px;white-space:nowrap}
+.aulc-env0{background:var(--mer)} .aulc-env1{background:var(--sable)}
+.aulc-btn[disabled]{opacity:.35;cursor:default}
+.aulc-hardbar,.aulc-card{scroll-margin-top:90px}
+.aulc-hardbar{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;font-family:'Comfortaa',sans-serif;font-size:14px}
+.aulc-hardbar .aulc-link{margin-left:auto}
+.aulc-done{background:var(--card);padding:28px;display:flex;flex-direction:column;gap:14px}
+.aulc-done .aulc-hand{font-size:26px}
+.aulc-movebox{padding:0 16px 18px;display:flex;flex-direction:column;gap:12px}
+.aulc-moverow{display:flex;gap:8px}
+.aulc-moverow .aulc-search{margin:0;flex:1 1 auto;min-width:0}
+.aulc-small{font-family:'Comfortaa',sans-serif!important;font-size:14px!important;padding:10px 16px;min-height:44px;border:0;background:var(--card)}
+.aulc-small:hover{background:var(--sable)}
+.aulc-grp{background:var(--card)}
+.aulc-grp summary{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;padding:12px 16px;cursor:pointer;list-style:none}
+.aulc-grp summary::-webkit-details-marker{display:none}
+.aulc-grp summary::before{content:"";width:9px;height:9px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(-45deg);transition:transform .15s;flex:0 0 auto;margin-right:2px}
+.aulc-grp[open] summary::before{transform:rotate(45deg)}
+.aulc-gname{flex:1 1 180px;font-family:'Comfortaa',sans-serif;font-size:15px;line-height:1.35}
+.aulc-count{font-family:'Comfortaa',sans-serif;font-size:14px;color:var(--ink-soft);min-width:38px;text-align:right}
+.aulc-whole{display:inline-flex;align-items:center;gap:8px;border:0;background:none;padding:8px 0;min-height:40px;font-family:'Comfortaa',sans-serif!important;font-size:13px!important}
+.aulc-whole::before{content:"";width:18px;height:18px;border:2px solid var(--ink);background:var(--card)}
+.aulc-whole[aria-pressed="true"]::before{background:var(--ink);box-shadow:inset 0 0 0 3px var(--card)}
+.aulc-whole[aria-pressed="mixed"]::before{background:linear-gradient(var(--card) 40%,var(--ink) 40%,var(--ink) 60%,var(--card) 60%)}
+.aulc-verbs{display:flex;flex-wrap:wrap;gap:8px;padding:4px 16px 18px}
+.aulc-verb{border:0;background:var(--paper);padding:9px 14px;min-height:44px;font-family:'Lora',Georgia,serif;font-size:16px}
+.aulc-verb[aria-pressed="true"]{background:var(--ink);color:var(--paper)!important}
+
+/* таблица */
+.aulc-table{background:var(--card)}
+.aulc-table summary{padding:14px 16px;cursor:pointer;font-family:'Comfortaa',sans-serif;font-size:15px}
+.aulc-twrap{overflow-x:auto;-webkit-overflow-scrolling:touch;padding:0 16px 16px}
+.aulc-twrap table{border-collapse:collapse;font-size:15px;white-space:nowrap}
+.aulc-twrap th,.aulc-twrap td{padding:7px 12px;text-align:left;border-bottom:1px solid rgba(43,38,34,.12)}
+.aulc-twrap thead th{font-family:'Comfortaa',sans-serif;font-weight:600;font-size:13px;color:var(--ink-soft)}
+.aulc-twrap tbody th{font-weight:600;position:sticky;left:0;background:var(--card)}
+.aulc-twrap thead th:first-child{position:sticky;left:0;background:var(--card)}
+.aulc-tnote{padding-bottom:4px;color:var(--ink-soft);font-size:15px}
+
+@media (max-width:760px){
+  .aulc{font-size:16px;gap:20px}
+  .aulc h1,.aulc h2{font-size:26px}
+  .aulc-card{padding:22px 20px 26px}
+  .aulc-inf{font-size:27px}
+  .aulc-btn{align-self:stretch;text-align:center}
+  .aulc-acc button{flex:1 0 44px}
+  .aulc-link{margin-left:0}
+}
+@media (prefers-reduced-motion:reduce){.aulc-grp summary::before{transition:none}}
+</style>
+
+<section class="aulc" id="aulc-present" aria-label="Тренажёр спряжения глаголов в présent">
+  <div class="aulc-head">
+    <span class="aulc-tag aulc-c2">élèves · A1–A2</span>
+    <h1 lang="fr">Le présent</h1>
+    <p class="aulc-intro">Выберите глаголы ниже, впишите форму и нажмите Enter: первый раз — проверить, второй — следующая карточка. Ошибки вернутся через три карточки.</p>
+  </div>
+
+  <div class="aulc-score">
+    <span>верно <b data-s="ok">0</b> / <b data-s="all">0</b></span>
+    <span>серия <b data-s="streak">0</b></span>
+    <span>лучшая <b data-s="best">0</b></span>
+    <button type="button" class="aulc-link" data-act="restart">Начать заново</button>
+  </div>
+
+  <div class="aulc-hardbar" data-el="hardbar" hidden>
+    <span class="aulc-tag aulc-c1" style="background:var(--sable)">повторяем сложное</span>
+    <span data-el="hardleft"></span>
+    <button type="button" class="aulc-link" data-act="leave">Вернуться к обычной тренировке</button>
+  </div>
+
+  <form class="aulc-card aulc-c3" data-el="card" autocomplete="off" novalidate>
+    <div class="aulc-inf" lang="fr" data-el="inf"></div>
+    <p class="aulc-hint" data-el="hint" hidden>Возвратный глагол: впишите форму вместе с местоимением — <span lang="fr">me lève, nous levons</span>.</p>
+    <div class="aulc-row">
+      <label class="aulc-subj" lang="fr" data-el="subj" for="aulc-answer"></label>
+      <input id="aulc-answer" class="aulc-input" data-el="input" type="text" lang="fr" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="done" placeholder="форма глагола">
+    </div>
+    <div class="aulc-acc" data-el="acc" role="group" aria-label="Буквы с диакритикой">
+      <button type="button" data-ch="é">é</button><button type="button" data-ch="è">è</button><button type="button" data-ch="ê">ê</button><button type="button" data-ch="à">à</button><button type="button" data-ch="â">â</button><button type="button" data-ch="ç">ç</button><button type="button" data-ch="î">î</button><button type="button" data-ch="ï">ï</button><button type="button" data-ch="ô">ô</button><button type="button" data-ch="û">û</button>
+    </div>
+    <div class="aulc-fb" data-el="fb" aria-live="polite"></div>
+    <button type="submit" class="aulc-btn aulc-c2" data-el="go">Проверить</button>
+  </form>
+  <p class="aulc-empty aulc-c1" data-el="empty" hidden>Пока не выбран ни один глагол. Отметьте группу или отдельные глаголы ниже — и можно начинать.</p>
+
+  <div class="aulc-done aulc-c2" data-el="done" hidden>
+    <span class="aulc-hand" lang="fr">tout est au port&nbsp;!</span>
+    <p>Все сложные формы в порту. Если снова ошибётесь, форма вернётся в список.</p>
+    <button type="button" class="aulc-btn aulc-c2" data-act="leave">К обычной тренировке</button>
+  </div>
+
+  <div class="aulc-hard">
+    <div class="aulc-pick-head">
+      <h3>Сложное</h3>
+      <span class="aulc-total" data-el="hardcount"></span>
+    </div>
+    <p class="aulc-pick-note">Сюда попадают формы, в которых вы ошиблись: сначала <span lang="fr">au large</span>, после верного ответа — <span lang="fr">en vue</span>, после второго — в порт, и форма уходит из списка. Список хранится в этом браузере.</p>
+    <ul class="aulc-hlist" data-el="hlist"></ul>
+    <button type="button" class="aulc-btn aulc-c3" data-act="hard" data-el="hardbtn">Повторить сложное</button>
+  </div>
+
+  <div class="aulc-pick">
+    <div class="aulc-pick-head">
+      <h3>Глаголы</h3>
+      <span class="aulc-total" data-el="total"></span>
+    </div>
+    <div class="aulc-views" data-el="views" role="group" aria-label="Как разложить глаголы"></div>
+    <p class="aulc-pick-note">Раскладка меняет только папки — выбранные глаголы остаются выбранными.</p>
+    <div class="aulc-pick-btns">
+      <button type="button" class="aulc-small aulc-c2" data-act="all">Выбрать все</button>
+      <button type="button" class="aulc-small aulc-c1" data-act="none">Снять все</button>
+    </div>
+    <div data-el="groups"></div>
+  </div>
+
+  <details class="aulc-table">
+    <summary>Таблица для самопроверки</summary>
+    <div class="aulc-twrap" data-el="twrap"></div>
+  </details>
+
+  <details class="aulc-table">
+    <summary>Перенести прогресс на другое устройство</summary>
+    <div class="aulc-movebox">
+      <p class="aulc-pick-note">Выбранные глаголы, сложные формы и лучшая серия хранятся только в этом браузере. Чтобы продолжить на другом устройстве, отправьте себе ссылку — например, в «Избранное» в Telegram — и откройте её там.</p>
+      <button type="button" class="aulc-small aulc-c2" data-act="link" style="align-self:flex-start">Скопировать ссылку</button>
+      <p class="aulc-pick-note" data-el="movemsg" aria-live="polite"></p>
+      <label class="aulc-pick-note" for="aulc-code">Или введите код с другого устройства:</label>
+      <div class="aulc-moverow">
+        <input id="aulc-code" class="aulc-search" data-el="code" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="1-…">
+        <button type="button" class="aulc-small aulc-c1" data-act="apply">Применить</button>
+      </div>
+    </div>
+  </details>
+</section>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---------- спряжения ---------- */
+  function L(s) { return s.split('|').map(function (x) { return x ? x.split('/') : null; }); }
+  function er(inf) { var s = inf.slice(0, -2); return L(s+'e|'+s+'es|'+s+'e|'+s+'ons|'+s+'ez|'+s+'ent'); }
+  function iss(inf) { var s = inf.slice(0, -2); return L(s+'is|'+s+'is|'+s+'it|'+s+'issons|'+s+'issez|'+s+'issent'); }
+  function V(inf, f, x) { var o = { inf: inf, f: f }; if (x) for (var k in x) o[k] = x[k]; return o; }
+  function R(list, fn) { return list.map(function (i) { return V(i, fn(i)); }); }
+
+  var GROUPS = [
+    { t: '1-я группа: правильные на -er',
+      v: R(['parler','aimer','habiter','travailler','regarder','écouter','chercher','donner','arriver','jouer'], er) },
+    { t: '1-я группа: орфографические особенности', v: [
+      V('manger',    L('mange|manges|mange|mangeons|mangez|mangent')),
+      V('nager',     L('nage|nages|nage|nageons|nagez|nagent')),
+      V('commencer', L('commence|commences|commence|commençons|commencez|commencent')),
+      V('acheter',   L('achète|achètes|achète|achetons|achetez|achètent')),
+      V('appeler',   L('appelle|appelles|appelle|appelons|appelez|appellent')),
+      V('jeter',     L('jette|jettes|jette|jetons|jetez|jettent')),
+      V('préférer',  L('préfère|préfères|préfère|préférons|préférez|préfèrent')),
+      V('répéter',   L('répète|répètes|répète|répétons|répétez|répètent')),
+      V('payer',     L('paie/paye|paies/payes|paie/paye|payons|payez|paient/payent')),
+      V('envoyer',   L('envoie|envoies|envoie|envoyons|envoyez|envoient')) ] },
+    { t: '2-я группа: finir, nous finissons',
+      v: R(['finir','choisir','réussir','grandir','réfléchir'], iss) },
+    { t: '3-я группа: самые частотные', v: [
+      V('être',  L('suis|es|est|sommes|êtes|sont')),
+      V('avoir', L('ai|as|a|avons|avez|ont')),
+      V('aller', L('vais|vas|va|allons|allez|vont')),
+      V('faire', L('fais|fais|fait|faisons|faites|font')) ] },
+    { t: '3-я группа: модальные', v: [
+      V('pouvoir', L('peux|peux|peut|pouvons|pouvez|peuvent')),
+      V('vouloir', L('veux|veux|veut|voulons|voulez|veulent')),
+      V('devoir',  L('dois|dois|doit|devons|devez|doivent')),
+      V('savoir',  L('sais|sais|sait|savons|savez|savent')) ] },
+    { t: '3-я группа: на -ir без -iss-', v: [
+      V('venir',  L('viens|viens|vient|venons|venez|viennent')),
+      V('tenir',  L('tiens|tiens|tient|tenons|tenez|tiennent')),
+      V('partir', L('pars|pars|part|partons|partez|partent')),
+      V('sortir', L('sors|sors|sort|sortons|sortez|sortent')),
+      V('dormir', L('dors|dors|dort|dormons|dormez|dorment')),
+      V('ouvrir', L('ouvre|ouvres|ouvre|ouvrons|ouvrez|ouvrent')) ] },
+    { t: '3-я группа: на -re', v: [
+      V('prendre',    L('prends|prends|prend|prenons|prenez|prennent')),
+      V('apprendre',  L('apprends|apprends|apprend|apprenons|apprenez|apprennent')),
+      V('comprendre', L('comprends|comprends|comprend|comprenons|comprenez|comprennent')),
+      V('mettre',     L('mets|mets|met|mettons|mettez|mettent')),
+      V('lire',       L('lis|lis|lit|lisons|lisez|lisent')),
+      V('dire',       L('dis|dis|dit|disons|dites|disent')),
+      V('écrire',     L('écris|écris|écrit|écrivons|écrivez|écrivent')),
+      V('boire',      L('bois|bois|boit|buvons|buvez|boivent')),
+      V('vivre',      L('vis|vis|vit|vivons|vivez|vivent')),
+      V('croire',     L('crois|crois|croit|croyons|croyez|croient')),
+      V('attendre',   L('attends|attends|attend|attendons|attendez|attendent')),
+      V('répondre',   L('réponds|réponds|répond|répondons|répondez|répondent')),
+      V('vendre',     L('vends|vends|vend|vendons|vendez|vendent')) ] },
+    { t: '3-я группа: на -oir', v: [
+      V('voir',     L('vois|vois|voit|voyons|voyez|voient')),
+      V('recevoir', L('reçois|reçois|reçoit|recevons|recevez|reçoivent')),
+      V('falloir',  L('||faut|||'), { only: 2 }) ] },
+    { t: 'Возвратные', v: [
+      V('se lever',    L('me lève|te lèves|se lève|nous levons|vous levez|se lèvent'), { refl: 1 }),
+      V("s'appeler",   L("m'appelle|t'appelles|s'appelle|nous appelons|vous appelez|s'appellent"), { refl: 1 }),
+      V('se coucher',  L('me couche|te couches|se couche|nous couchons|vous couchez|se couchent'), { refl: 1 }),
+      V("s'habiller",  L("m'habille|t'habilles|s'habille|nous habillons|vous habillez|s'habillent"), { refl: 1 }) ] }
+  ];
+  var DEFAULT_GROUP = 3; /* «самые частотные» */
+
+  var SUBJ = [['je'], ['tu'], ['il', 'elle', 'on'], ['nous'], ['vous'], ['ils', 'elles']];
+  var HEAD = ['je / j’', 'tu', 'il / elle / on', 'nous', 'vous', 'ils / elles'];
+
+  /* ---------- проверка ответа ---------- */
+  function disp(s) { return s.replace(/'/g, '’'); }
+  function elide(form) { return /^[aàâeéèêiîïoôuûyh]/.test(form); }
+  function subjects(v, p) { return v.only !== undefined ? ['il'] : SUBJ[p]; }
+  function norm(s) {
+    return String(s).normalize('NFC').toLowerCase()
+      .replace(/[’ʼ‘`´]/g, "'").replace(/\s+/g, ' ').replace(/ ?' ?/g, "'").trim();
+  }
+  function bare(s) { return s.normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }
+  function accepted(v, p) {
+    var out = [];
+    v.f[p].forEach(function (a) {
+      out.push(norm(a));
+      subjects(v, p).forEach(function (s) {
+        out.push(norm(p === 0 && elide(a) ? "j'" + a : s + ' ' + a));
+      });
+    });
+    return out;
+  }
+  function judge(v, p, input) {
+    var n = norm(input);
+    if (!n) return 'empty';
+    var acc = accepted(v, p);
+    if (acc.indexOf(n) > -1) return 'ok';
+    if (acc.map(bare).indexOf(bare(n)) > -1) return 'almost';
+    return 'wrong';
+  }
+  function withSubj(s, p, a) { return p === 0 ? (elide(a) ? 'j’' + disp(a) : 'je ' + disp(a)) : s + ' ' + disp(a); }
+
+  /* ---------- раскладки: одни и те же глаголы в разных папках ---------- */
+  var VERBS = [];
+  GROUPS.forEach(function (g) { g.v.forEach(function (v) { VERBS.push(v); }); });
+  var BY = {}, VI = {};
+  VERBS.forEach(function (v, i) { BY[v.inf] = v; VI[v.inf] = i; });
+  function base(inf) { return inf.replace(/^se /, '').replace(/^s'/, ''); }
+  var ALPHA = VERBS.map(function (v) { return v.inf; })
+    .sort(function (a, b) { return base(a).localeCompare(base(b), 'fr'); });
+
+  var STEMS = [
+    { t: 'Одна основа', d: 'parle — parlons — parlent', n: 'manger, nager, commencer: меняется только написание — mangeons, commençons',
+      v: ['parler','aimer','habiter','travailler','regarder','écouter','chercher','donner','arriver','jouer','manger','nager','commencer','ouvrir','se coucher',"s'habiller"] },
+    { t: 'Две основы: единственное и множественное', d: 'finis — finissons, écris — écrivons', n: 'dire: особая форма — vous dites',
+      v: ['finir','choisir','réussir','grandir','réfléchir','partir','sortir','dormir','mettre','lire','dire','écrire','vivre','attendre','répondre','vendre','savoir'] },
+    { t: 'Сапог: nous и vous — от инфинитива', d: 'achète — achetons — achètent', n: 'payer: верны оба варианта — je paie и je paye',
+      v: ['acheter','appeler','jeter','préférer','répéter','payer','envoyer','voir','croire','se lever',"s'appeler"] },
+    { t: 'Три основы', d: 'prends — prenons — prennent',
+      v: ['venir','tenir','prendre','apprendre','comprendre','boire','pouvoir','vouloir','devoir','recevoir'] },
+    { t: 'Особые', d: 'suis, ai, vais, fais, il faut',
+      v: ['être','avoir','aller','faire','falloir'] }
+  ];
+  var VIEWS = [
+    { name: 'По группам', folders: GROUPS.map(function (g) { return { t: g.t, v: g.v.map(function (v) { return v.inf; }) }; }), open: DEFAULT_GROUP },
+    { name: 'По основам', folders: STEMS, open: -1 },
+    { name: 'Все глаголы', folders: null }
+  ];
+
+  /* ---------- сложные формы и код переноса (без DOM) ---------- */
+  function validKey(k) {
+    var i = k.lastIndexOf('.'), v = BY[k.slice(0, i)], p = +k.slice(i + 1);
+    return !!(v && p >= 0 && p < 6 && v.f[p]);
+  }
+  function encode(data) { /* data: {sel:{inf:true}, view, best, hard:{key:0|1}} */
+    var bits = VERBS.map(function (v) { return data.sel[v.inf] ? '1' : '0'; });
+    var a = parseInt(bits.slice(0, 30).join(''), 2).toString(36);
+    var b = parseInt(bits.slice(30).join('') || '0', 2).toString(36);
+    var h = Object.keys(data.hard).filter(validKey).map(function (k) {
+      var i = k.lastIndexOf('.'), n = (VI[k.slice(0, i)] * 6 + (+k.slice(i + 1))) * 2 + (data.hard[k] ? 1 : 0);
+      return ('0' + n.toString(36)).slice(-2);
+    }).join('');
+    return ['1', a, b, data.view, data.best.toString(36), h].join('-');
+  }
+  function decode(code) {
+    var parts = String(code).trim().toLowerCase().split('-');
+    if (parts.length !== 6 || parts[0] !== '1') return null;
+    for (var i = 1; i < 6; i++) if (!/^[0-9a-z]*$/.test(parts[i])) return null;
+    if (parts[5].length % 2) return null;
+    var view = +parts[3]; if (!(view >= 0 && view < 3)) return null;
+    var bitsA = parseInt(parts[1] || '0', 36).toString(2), bitsB = parseInt(parts[2] || '0', 36).toString(2);
+    var nB = VERBS.length - 30;
+    if (bitsA.length > 30 || bitsB.length > nB) return null;
+    var bits = ('0'.repeat(30) + bitsA).slice(-30) + ('0'.repeat(nB) + bitsB).slice(-nB);
+    var sel = {};
+    VERBS.forEach(function (v, i) { if (bits[i] === '1') sel[v.inf] = true; });
+    var hard = {};
+    for (var j = 0; j < parts[5].length; j += 2) {
+      var n = parseInt(parts[5].substr(j, 2), 36), lvl = n % 2, cell = (n - lvl) / 2;
+      var v = VERBS[Math.floor(cell / 6)], p = cell % 6;
+      if (!v || !v.f[p]) return null;
+      hard[v.inf + '.' + p] = lvl;
+    }
+    return { sel: sel, view: view, best: parseInt(parts[4] || '0', 36) || 0, hard: hard };
+  }
+
+  var root = typeof document !== 'undefined' ? document.getElementById('aulc-present') : null;
+  if (!root) {
+    if (typeof window === 'undefined') globalThis.aulcTest = { GROUPS: GROUPS, judge: judge, STEMS: STEMS, VERBS: VERBS, encode: encode, decode: decode };
+    return;
+  }
+
+  /* ---------- интерфейс ---------- */
+  function $(n) { return root.querySelector('[data-el="' + n + '"]'); }
+  var el = {};
+  ['card','inf','hint','subj','input','acc','fb','go','empty','groups','twrap','views','total',
+   'hardbar','hardleft','done','hardcount','hlist','hardbtn','movemsg','code'].forEach(function (n) { el[n] = $(n); });
+
+  var sel = {};
+  GROUPS[DEFAULT_GROUP].v.forEach(function (v) { sel[v.inf] = true; });
+  var view = 0, search = '', openSt = [{}, {}, {}];
+  var st = { ok: 0, all: 0, streak: 0, best: 0 };
+  var hard = {};                 /* «инф.лицо» → 0 au large, 1 en vue */
+  var mode = 'normal';           /* normal | hard */
+  var queue = [], n = 0, cur = null, lastKey = null, checked = false;
+
+  /* память браузера: работает без регистрации, данные не покидают устройство */
+  var STORE = 'aulc-present-v1';
+  function save() {
+    try { localStorage.setItem(STORE, encode({ sel: sel, view: view, best: st.best, hard: hard })); } catch (e) {}
+  }
+  function applyData(d) {
+    sel = d.sel; view = d.view; st.best = Math.max(st.best, d.best); hard = d.hard;
+  }
+  try { var saved = decode(localStorage.getItem(STORE) || ''); if (saved) applyData(saved); } catch (e) {}
+  VIEWS.forEach(function (w, i) { if (w.open >= 0) openSt[i][w.open] = true; });
+
+  function key(c) { return c.inf + '.' + c.p; }
+  function verb(c) { return BY[c.inf]; }
+  function rnd(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+  function esc(s) { return s.replace(/&/g, '&amp;').replace(/"/g, '&quot;'); }
+  function plural(n, a, b, c) { var m = n % 10, h = n % 100; return m === 1 && h !== 11 ? a : (m >= 2 && m <= 4 && (h < 10 || h >= 20) ? b : c); }
+  function cardOf(k) { var i = k.lastIndexOf('.'); return { inf: k.slice(0, i), p: +k.slice(i + 1) }; }
+  function label(k) {
+    var c = cardOf(k), v = BY[c.inf], s = v.only !== undefined ? 'il' : SUBJ[c.p][0];
+    return disp(v.inf) + ': ' + withSubj(s, c.p, v.f[c.p][0]);
+  }
+
+  function pool() {
+    if (mode === 'hard') return Object.keys(hard).map(cardOf);
+    var arr = [];
+    VERBS.forEach(function (v) {
+      if (!sel[v.inf]) return;
+      for (var p = 0; p < 6; p++) if (v.f[p]) arr.push({ inf: v.inf, p: p });
+    });
+    return arr;
+  }
+
+  function show(c) {
+    var v = verb(c);
+    c.s = c.p === 0 ? (elide(v.f[0][0]) ? 'j’' : 'je') : rnd(subjects(v, c.p));
+    cur = c; lastKey = key(c); checked = false;
+    el.inf.textContent = disp(v.inf);
+    el.hint.hidden = !v.refl;
+    el.subj.textContent = c.s;
+    el.subj.classList.toggle('aulc-el', c.s === 'j’');
+    el.input.value = '';
+    el.fb.className = 'aulc-fb'; el.fb.innerHTML = '';
+    el.go.textContent = 'Проверить';
+    el.card.hidden = false; el.empty.hidden = true; el.done.hidden = true;
+  }
+
+  function next(focus) {
+    var pl = pool();
+    el.hardbar.hidden = mode !== 'hard';
+    if (!pl.length) {
+      cur = null; el.card.hidden = true;
+      if (mode === 'hard') { el.hardbar.hidden = true; el.done.hidden = false; el.empty.hidden = true; }
+      else { el.empty.hidden = false; el.done.hidden = true; }
+      return;
+    }
+    n++;
+    var c = null;
+    if (mode === 'normal') for (var i = 0; i < queue.length; i++) {
+      var q = queue[i];
+      if (q.due <= n && sel[q.c.inf] && key(q.c) !== lastKey) { c = queue.splice(i, 1)[0].c; break; }
+    }
+    if (!c) {
+      /* не повторять прошлую карточку и не выдавать раньше времени ту, что ждёт повтора */
+      var waiting = mode === 'normal' ? queue.map(function (q) { return key(q.c); }) : [];
+      var cand = pl.filter(function (x) { return key(x) !== lastKey && waiting.indexOf(key(x)) < 0; });
+      if (!cand.length) cand = pl.length > 1 ? pl.filter(function (x) { return key(x) !== lastKey; }) : pl;
+      c = rnd(cand);
+    }
+    show({ inf: c.inf, p: c.p });
+    renderHard();
+    if (focus) el.input.focus({ preventScroll: true });
+  }
+
+  function feedback(cls, note, html) {
+    el.fb.className = 'aulc-fb ' + cls;
+    el.fb.innerHTML = '<span class="aulc-hand" lang="fr">' + note + '</span>' + html;
+  }
+
+  function check() {
+    if (!cur) return;
+    if (checked) { next(true); return; }
+    var v = verb(cur), r = judge(v, cur.p, el.input.value);
+    if (r === 'empty') { el.fb.className = 'aulc-fb'; el.fb.textContent = 'Впишите форму глагола.'; el.input.focus(); return; }
+    checked = true; st.all++;
+    var k = key(cur);
+    var forms = v.f[cur.p].map(function (a) { return withSubj(cur.s, cur.p, a); });
+    var right = '<b lang="fr">' + forms.join(' / ') + '</b>';
+    if (r === 'ok') {
+      st.ok++; st.streak++; if (st.streak > st.best) st.best = st.streak;
+      var extra = '';
+      if (hard[k] !== undefined) {
+        hard[k]++;
+        if (hard[k] >= 2) { delete hard[k]; extra = ' Форма в порту.'; }
+        else extra = ' Форма уже <span lang="fr">en vue</span>.';
+      }
+      feedback('aulc-ok', 'très bien !', (forms.length > 1 ? 'Верно. Правильны обе формы: ' + right : 'Верно.') + extra);
+    } else {
+      st.streak = 0;
+      hard[k] = 0;
+      if (mode === 'normal') {
+        queue = queue.filter(function (q) { return key(q.c) !== k; });
+        queue.push({ c: { inf: cur.inf, p: cur.p }, due: n + 4 });
+      }
+      if (r === 'almost') feedback('aulc-almost', 'presque…', 'Почти — проверьте диакритику: ' + right);
+      else feedback('aulc-no', 'pas encore', 'Правильно: ' + right);
+    }
+    el.go.textContent = 'Дальше';
+    renderScore(); renderHard(); save();
+  }
+
+  function renderScore() {
+    root.querySelectorAll('[data-s]').forEach(function (b) { b.textContent = st[b.getAttribute('data-s')]; });
+  }
+
+  function renderHard() {
+    var keys = Object.keys(hard).sort(function (a, b) { return hard[a] - hard[b] || label(a).localeCompare(label(b), 'fr'); });
+    var nk = keys.length;
+    el.hardcount.textContent = nk ? nk + ' ' + plural(nk, 'форма', 'формы', 'форм') : 'пока пусто';
+    el.hlist.innerHTML = keys.map(function (k) {
+      return '<li><span lang="fr">' + label(k) + '</span><span class="aulc-env aulc-env' + hard[k] + '" lang="fr">' + (hard[k] ? 'en vue' : 'au large') + '</span></li>';
+    }).join('');
+    var busy = mode === 'hard' && nk > 0;
+    el.hardbtn.disabled = !nk || busy;
+    el.hardbtn.textContent = busy ? 'Повторяем сложное…' : 'Повторить сложное' + (nk ? ' (' + nk + ')' : '');
+    el.hardleft.textContent = 'осталось ' + nk;
+  }
+
+  /* ---------- выбор глаголов ---------- */
+  function chips(list) {
+    return list.map(function (inf, i) {
+      return '<button type="button" class="aulc-verb aulc-c' + (i % 3 + 1) + '" data-v="' + esc(inf) + '" aria-pressed="false">' + disp(inf) + '</button>';
+    }).join('');
+  }
+
+  function buildPick() {
+    el.views.innerHTML = VIEWS.map(function (w, i) {
+      return '<button type="button" class="aulc-view aulc-c' + (i % 3 + 1) + '" data-view="' + i + '" aria-pressed="' + (i === view) + '">' + w.name + '</button>';
+    }).join('');
+    var w = VIEWS[view];
+    if (w.folders) {
+      el.groups.innerHTML = w.folders.map(function (f, fi) {
+        return '<details class="aulc-grp" data-fold="' + fi + '"' + (openSt[view][fi] ? ' open' : '') + ' style="margin-bottom:8px">' +
+          '<summary><span class="aulc-gname">' + f.t + (f.d ? '<small lang="fr">' + f.d + '</small>' : '') + (f.n ? '<small>' + f.n + '</small>' : '') + '</span>' +
+          '<span class="aulc-count" data-count="' + fi + '"></span>' +
+          '<button type="button" class="aulc-whole" data-whole="' + fi + '" aria-pressed="false">вся группа</button></summary>' +
+          '<div class="aulc-verbs" lang="fr">' + chips(f.v) + '</div></details>';
+      }).join('');
+    } else {
+      el.groups.innerHTML = '<div class="aulc-all">' +
+        '<input type="search" class="aulc-search" data-search lang="fr" placeholder="найти глагол" aria-label="Найти глагол" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false">' +
+        '<div class="aulc-verbs" lang="fr">' + chips(ALPHA) + '</div>' +
+        '<p class="aulc-nofind" data-nofind hidden>Такого глагола в тренажёре нет.</p></div>';
+      var inp = el.groups.querySelector('[data-search]');
+      inp.value = search;
+      inp.addEventListener('input', function () { search = inp.value; filterAll(); });
+      filterAll();
+    }
+  }
+
+  function filterAll() {
+    var q = bare(norm(search)), shown = 0;
+    el.groups.querySelectorAll('[data-v]').forEach(function (b) {
+      var hit = !q || bare(norm(b.getAttribute('data-v'))).indexOf(q) > -1;
+      b.hidden = !hit; if (hit) shown++;
+    });
+    var nf = el.groups.querySelector('[data-nofind]');
+    if (nf) nf.hidden = shown > 0;
+  }
+
+  function renderPick() {
+    var on = VERBS.filter(function (v) { return sel[v.inf]; }).length;
+    el.total.textContent = 'выбрано ' + on + ' из ' + VERBS.length;
+    var w = VIEWS[view];
+    if (w.folders) w.folders.forEach(function (f, fi) {
+      var k = f.v.filter(function (inf) { return sel[inf]; }).length;
+      root.querySelector('[data-count="' + fi + '"]').textContent = k + '/' + f.v.length;
+      root.querySelector('[data-whole="' + fi + '"]').setAttribute('aria-pressed', k === 0 ? 'false' : k === f.v.length ? 'true' : 'mixed');
+    });
+    el.groups.querySelectorAll('[data-v]').forEach(function (b) {
+      b.setAttribute('aria-pressed', sel[b.getAttribute('data-v')] ? 'true' : 'false');
+    });
+  }
+
+  function order() {
+    var w = VIEWS[view];
+    if (!w.folders) return ALPHA;
+    var out = [];
+    w.folders.forEach(function (f) { out = out.concat(f.v); });
+    return out;
+  }
+
+  function renderTable() {
+    var rows = order().filter(function (inf) { return sel[inf]; }).map(function (inf) { return BY[inf]; });
+    if (!rows.length) { el.twrap.innerHTML = '<p class="aulc-tnote">Выберите глаголы — и здесь появится таблица.</p>'; return; }
+    el.twrap.innerHTML = '<table lang="fr"><thead><tr><th scope="col" lang="ru">глагол</th>' +
+      HEAD.map(function (h) { return '<th scope="col">' + h + '</th>'; }).join('') + '</tr></thead><tbody>' +
+      rows.map(function (v) {
+        return '<tr><th scope="row">' + disp(v.inf) + '</th>' + v.f.map(function (f) {
+          return '<td>' + (f ? f.map(disp).join(' / ') : '—') + '</td>';
+        }).join('') + '</tr>';
+      }).join('') + '</tbody></table>';
+  }
+
+  function changed() {
+    renderPick(); renderTable(); save();
+    if (mode === 'normal' && (!cur || !sel[cur.inf])) next(false);
+  }
+
+  function restart() {
+    st.ok = 0; st.all = 0; st.streak = 0;
+    queue = [];
+    renderScore(); next(false);
+  }
+
+  function setMode(m) {
+    mode = m; lastKey = null;
+    next(m === 'hard');
+    renderHard();
+    (m === 'hard' ? el.hardbar : el.card).scrollIntoView({ block: 'start', behavior: 'smooth' });
+  }
+
+  function insert(ch) {
+    var i = el.input;
+    if (document.activeElement !== i) { i.focus(); i.setSelectionRange(i.value.length, i.value.length); }
+    var s = i.selectionStart == null ? i.value.length : i.selectionStart;
+    var e = i.selectionEnd == null ? s : i.selectionEnd;
+    i.setRangeText(ch, s, e, 'end');
+  }
+
+  /* ---------- перенос прогресса ---------- */
+  function shareLink() {
+    return location.href.split('#')[0] + '#p=' + encode({ sel: sel, view: view, best: st.best, hard: hard });
+  }
+  function copyLink() {
+    var link = shareLink(), code = link.split('#p=')[1];
+    function done(ok) {
+      el.movemsg.innerHTML = (ok ? 'Ссылка скопирована. ' : 'Скопируйте ссылку: <span lang="fr" style="word-break:break-all">' + link + '</span><br>') +
+        'Код для ввода вручную: <b style="word-break:break-all">' + code + '</b>';
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(link).then(function () { done(true); }, function () { done(false); });
+    else done(false);
+  }
+  function loadCode(code, ask) {
+    var d = decode(code);
+    if (!d) { el.movemsg.textContent = 'Код не подошёл — проверьте, что он скопирован целиком.'; return false; }
+    if (ask && !window.confirm('Загрузить прогресс с другого устройства? Выбор глаголов и сложные формы на этом устройстве заменятся.')) return false;
+    applyData(d); mode = 'normal'; queue = [];
+    buildPick(); changed(); next(false); renderHard(); save();
+    el.movemsg.textContent = 'Прогресс загружен.';
+    return true;
+  }
+
+  /* события */
+  el.card.addEventListener('submit', function (e) { e.preventDefault(); check(); });
+  el.input.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') { e.preventDefault(); check(); }
+  });
+  /* кнопки с буквами вставляют символ сразу при касании и не уводят фокус — клавиатура телефона не закрывается */
+  var accTime = 0;
+  el.acc.addEventListener('pointerdown', function (e) {
+    var b = e.target.closest('button'); if (!b) return;
+    e.preventDefault(); insert(b.dataset.ch); accTime = Date.now();
+  });
+  el.acc.addEventListener('mousedown', function (e) { if (e.target.closest('button')) e.preventDefault(); });
+  /* запоминаем, какие папки открыты в каждой раскладке */
+  el.groups.addEventListener('toggle', function (e) {
+    var d = e.target;
+    if (d.matches && d.matches('[data-fold]')) openSt[view][d.getAttribute('data-fold')] = d.open;
+  }, true);
+
+  root.addEventListener('click', function (e) {
+    var b = e.target.closest('button');
+    if (!b || !root.contains(b)) return;
+    var d = b.dataset;
+    if (d.ch) { if (Date.now() - accTime > 700) insert(d.ch); return; } /* клавиатура: Enter или пробел на кнопке */
+    if (d.view !== undefined) { view = +d.view; buildPick(); changed(); return; }
+    if (d.whole !== undefined) {
+      e.preventDefault(); /* не сворачивать папку */
+      var f = VIEWS[view].folders[+d.whole], all = f.v.every(function (inf) { return sel[inf]; });
+      f.v.forEach(function (inf) { sel[inf] = !all; });
+      changed(); return;
+    }
+    if (d.v) { sel[d.v] = !sel[d.v]; changed(); return; }
+    if (d.act === 'all') { VERBS.forEach(function (v) { sel[v.inf] = true; }); changed(); }
+    if (d.act === 'none') { sel = {}; changed(); }
+    if (d.act === 'restart') restart();
+    if (d.act === 'hard') setMode('hard');
+    if (d.act === 'leave') setMode('normal');
+    if (d.act === 'link') copyLink();
+    if (d.act === 'apply') loadCode(el.code.value, true);
+  });
+
+  buildPick(); renderScore(); renderHard(); changed();
+  /* открыли ссылку переноса */
+  if (/^#p=/.test(location.hash)) {
+    var fromLink = decodeURIComponent(location.hash.slice(3));
+    try { history.replaceState(null, '', location.href.split('#')[0]); } catch (e) {}
+    loadCode(fromLink, true);
+  }
+})();
+</script>
+
+    </div>
+  </div>
+</section>
+</main>
+
+<svg class="wave" viewBox="0 0 1280 60" preserveAspectRatio="none" aria-hidden="true" style="background:#E9EDEE"><path d="M0 60 L 0 26 C 180 8, 360 44, 560 24 C 760 4, 960 40, 1160 20 C 1220 14, 1260 20, 1280 18 L 1280 60 Z" fill="#2F4B8A"/></svg>
+
+<footer class="foot">
+  <svg class="algue" viewBox="140 6 66 148" aria-hidden="true"><path d="M176.2 12.4 L175.4 13.4 L173.4 17.9 L171.1 27.2 L170.3 55.8 L169.9 55.4 L167.4 47.8 L165.9 45.2 L163.7 42.7 L161.8 41.7 L160.2 41.0 L157.7 41.2 L156.1 42.1 L156.8 46.8 L158.4 51.0 L167.2 70.0 L168.8 79.2 L168.3 79.2 L165.4 76.7 L162.0 74.3 L156.3 71.9 L153.2 71.5 L148.3 71.7 L147.6 72.6 L147.0 74.9 L147.4 77.1 L148.7 79.8 L150.6 82.4 L153.9 84.7 L160.2 87.3 L165.4 88.2 L169.3 88.1 L169.8 88.7 L171.1 102.4 L170.8 138.0 L171.2 149.0 L171.8 150.0 L175.6 149.7 L173.4 127.0 L173.0 89.5 L172.1 70.5 L172.8 69.7 L184.6 64.4 L190.4 60.5 L195.6 55.6 L198.7 49.6 L198.4 48.6 L194.2 46.9 L191.4 46.9 L187.1 47.3 L181.0 49.8 L173.5 54.9 L178.6 37.7 L180.4 27.5 L180.2 22.6 L179.6 18.5 L178.3 15.2 Z" fill="#B9C7D0"/></svg>
+  <div class="inner" style="position:relative">
+    <div class="marge">
+      
+      <span class="hand">les profondeurs</span>
+    </div>
+    <div class="content">
+      <div class="word">au<span style="color:#B9C7D0">l</span>cours</div>
+      <div class="links">
+        <!-- ЗАМЕНИТЕ # на свои ссылки -->
+        <a href="#">Telegram</a>
+        <a href="#">Instagram</a>
+      </div>
+      <span class="hand" style="color:#DCE3E6;font-size:22px">à bientôt&nbsp;!</span>
+      <small style="opacity:.75">© <span id="year">2026</span> aulcours.com</small>
+    </div>
+  </div>
+</footer>
+
+<script>
+var burger=document.querySelector(".burger"),menu=document.getElementById("menu");
+burger.addEventListener("click",function(){var o=menu.classList.toggle("open");burger.setAttribute("aria-expanded",o?"true":"false");});
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
