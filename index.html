@@ -104,7 +104,13 @@ p{margin:0}
 .empty{padding:28px;background:var(--card);color:var(--ink-soft)}
 .swipe-hint{display:none}
 
-/* 04 feuilleton */
+/* 04 тренажёры */
+.s-ex{background:#E5EBEC}
+.trainers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.trainer h3{font-size:26px}
+.all-link{font-family:'Comfortaa',sans-serif;font-size:15px;align-self:flex-start}
+
+/* 05 feuilleton */
 .s4{background:var(--s4)}
 .feuil{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:32px;align-items:center}
 .feuil .text{display:flex;flex-direction:column;gap:16px}
@@ -162,6 +168,7 @@ p{margin:0}
   .card{flex:0 0 74%;scroll-snap-align:start}
   .swipe-hint{display:block;font-size:15px}
   .feuil{grid-template-columns:1fr}
+  .trainers{grid-template-columns:1fr}
   .portrait{margin:0 auto}
   .btn{width:100%}
 }
@@ -186,6 +193,7 @@ p{margin:0}
     <nav class="nav" id="menu" aria-label="Основное меню">
       <a href="#materiaux" data-aud="profs">profs</a>
       <a href="#materiaux" data-aud="eleves">élèves</a>
+      <a href="exercices/">exercices</a>
     </nav>
   </div>
 </header>
@@ -287,13 +295,40 @@ p{margin:0}
   </div>
 </section>
 
-<svg class="wave" viewBox="0 0 1280 60" preserveAspectRatio="none" aria-hidden="true" style="background:#E9EDEE"><path d="M0 60 L 0 32 C 160 12, 340 48, 540 28 C 740 8, 920 44, 1120 24 C 1200 16, 1250 26, 1280 22 L 1280 60 Z" fill="#E2E8EA"/></svg>
+<svg class="wave" viewBox="0 0 1280 60" preserveAspectRatio="none" aria-hidden="true" style="background:#E9EDEE"><path d="M0 60 L 0 32 C 160 12, 340 48, 540 28 C 740 8, 920 44, 1120 24 C 1200 16, 1250 26, 1280 22 L 1280 60 Z" fill="#E5EBEC"/></svg>
 
-<!-- 04 · le feuilleton -->
-<section class="sec s4" id="feuilleton">
+<!-- 04 · les manœuvres -->
+<section class="sec s-ex" id="exercices">
   <div class="inner">
     <div class="marge">
       <span class="num">04</span>
+      <svg width="70" height="70" viewBox="0 0 80 80" aria-hidden="true"><path d="M12 70 L 52 22" stroke="#8E5E50" stroke-width="5" stroke-linecap="round"/><path d="M50 26 C 52 10, 70 4, 74 8 C 78 12, 72 30, 56 30 Z" fill="#B9C7D0"/><path d="M0 80 L 0 70 C 20 64, 40 76, 60 70 C 70 67, 76 70, 80 69 L 80 80 Z" fill="#E3D3AE"/></svg>
+      <span class="hand">les manœuvres</span>
+      <span class="note">тренировка экипажа: отработать форму до автоматизма</span>
+    </div>
+    <div class="content">
+      <h2>Тренажёры</h2>
+      <p class="intro">Бесплатные онлайн-тренажёры: короткая отработка формы между уроками. Ошибки собираются в «Сложное», их можно повторить отдельно.</p>
+      <div class="trainers">
+        <article class="edition trainer cut3">
+          <span class="tag t-eleves cut2" style="transform:rotate(-2deg)">élèves · A1–A2</span>
+          <h3 lang="fr">Le présent</h3>
+          <p class="who">Спряжение 59 глаголов: карточки с проверкой, ошибки собираются в «Сложное».</p>
+          <a href="eleves/present/" class="btn btn-dark cut2 tilt-l" style="align-self:flex-start">Открыть тренажёр</a>
+        </article>
+      </div>
+      <a href="exercices/" class="all-link">Все тренажёры →</a>
+    </div>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1280 60" preserveAspectRatio="none" aria-hidden="true" style="background:#E5EBEC"><path d="M0 60 L 0 28 C 170 10, 350 46, 550 26 C 750 6, 940 42, 1140 22 C 1210 15, 1255 22, 1280 20 L 1280 60 Z" fill="#E2E8EA"/></svg>
+
+<!-- 05 · le feuilleton -->
+<section class="sec s4" id="feuilleton">
+  <div class="inner">
+    <div class="marge">
+      <span class="num">05</span>
       <svg width="86" height="60" viewBox="0 0 130 90" aria-hidden="true"><path d="M0 90 L 0 50 C 0 25, 36 25, 36 50 L 36 90 Z" fill="#B9C7D0"/><path d="M47 90 L 47 50 C 47 25, 83 25, 83 50 L 83 90 Z" fill="#E3D3AE"/><path d="M94 90 L 94 50 C 94 25, 130 25, 130 50 L 130 90 Z" fill="#D9C3C1"/></svg>
       <span class="hand">le feuilleton</span>
       <span class="note">история по главам: каждая глава — новый порт</span>
@@ -317,11 +352,11 @@ p{margin:0}
 
 <svg class="wave" viewBox="0 0 1280 60" preserveAspectRatio="none" aria-hidden="true" style="background:#E2E8EA"><path d="M0 60 L 0 24 C 180 6, 380 42, 580 22 C 780 2, 980 38, 1180 18 C 1230 13, 1260 18, 1280 16 L 1280 60 Z" fill="#D6DFE3"/></svg>
 
-<!-- 05 · l'escale -->
+<!-- 06 · l'escale -->
 <section class="sec s5">
   <div class="inner">
     <div class="marge">
-      <span class="num">05</span>
+      <span class="num">06</span>
       <svg width="70" height="70" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="30" fill="none" stroke="#D9C3C1" stroke-width="10"/></svg>
       <span class="hand">l’escale</span>
       <span class="note">остановка в порту</span>
@@ -339,12 +374,12 @@ p{margin:0}
 
 <svg class="wave" viewBox="0 0 1280 60" preserveAspectRatio="none" aria-hidden="true" style="background:#D6DFE3"><path d="M0 60 L 0 26 C 180 8, 360 44, 560 24 C 760 4, 960 40, 1160 20 C 1220 14, 1260 20, 1280 18 L 1280 60 Z" fill="#2F4B8A"/></svg>
 
-<!-- 06 · les profondeurs -->
+<!-- 07 · les profondeurs -->
 <footer class="foot">
   <svg class="algue" viewBox="140 6 66 148" aria-hidden="true"><path d="M176.2 12.4 L175.4 13.4 L173.4 17.9 L171.1 27.2 L170.3 55.8 L169.9 55.4 L167.4 47.8 L165.9 45.2 L163.7 42.7 L161.8 41.7 L160.2 41.0 L157.7 41.2 L156.1 42.1 L156.8 46.8 L158.4 51.0 L167.2 70.0 L168.8 79.2 L168.3 79.2 L165.4 76.7 L162.0 74.3 L156.3 71.9 L153.2 71.5 L148.3 71.7 L147.6 72.6 L147.0 74.9 L147.4 77.1 L148.7 79.8 L150.6 82.4 L153.9 84.7 L160.2 87.3 L165.4 88.2 L169.3 88.1 L169.8 88.7 L171.1 102.4 L170.8 138.0 L171.2 149.0 L171.8 150.0 L175.6 149.7 L173.4 127.0 L173.0 89.5 L172.1 70.5 L172.8 69.7 L184.6 64.4 L190.4 60.5 L195.6 55.6 L198.7 49.6 L198.4 48.6 L194.2 46.9 L191.4 46.9 L187.1 47.3 L181.0 49.8 L173.5 54.9 L178.6 37.7 L180.4 27.5 L180.2 22.6 L179.6 18.5 L178.3 15.2 Z" fill="#B9C7D0"/></svg>
   <div class="inner" style="position:relative">
     <div class="marge">
-      <span class="num">06</span>
+      <span class="num">07</span>
       <span class="hand">les profondeurs</span>
     </div>
     <div class="content">
@@ -366,8 +401,6 @@ p{margin:0}
    shape — знак рубрики: leaf (Les cahiers), target (L’examen), arches (Le feuilleton),
                          circles (La conversation), checker (Les jeux), lines (Les leçons) */
 var THEMES = [
-  {level:"A1", fr:"Le présent",     aud:"eleves", rub:"Les cahiers · тренажёр", note:"à vous\u00a0!", shape:"leaf", href:"eleves/present/"},
-  {level:"A2", fr:"Le présent",     aud:"eleves", rub:"Les cahiers · тренажёр", note:"à vous\u00a0!", shape:"leaf", href:"eleves/present/"},
   {level:"A1", fr:"Se présenter",   aud:"eleves", rub:"Les cahiers",      note:"bonjour\u00a0!",  shape:"leaf"},
   {level:"A1", fr:"Au café",        aud:"profs",  rub:"La conversation",  note:"on parle\u00a0?", shape:"circles"},
   {level:"A1", fr:"Ma famille",     aud:"profs",  rub:"Les jeux",         note:"on joue\u00a0!",  shape:"checker"},

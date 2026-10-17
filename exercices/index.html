@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Тренажёры · aulcours</title>
+<meta name="description" content="Бесплатные онлайн-тренажёры по французскому для уровней A1–A2: спряжение и грамматика с проверкой.">
+<meta property="og:title" content="Тренажёры · aulcours">
+<meta property="og:description" content="Бесплатные онлайн-тренажёры по французскому.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aulcours.com/exercices/">
+<meta name="theme-color" content="#EFE6D6">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600&family=Lora:ital,wght@0,400;0,600;1,400&family=Mrs+Saint+Delafield&family=Mynerve&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sand:#EFE6D6; --paper:#F4F0E6; --card:#FBF8F1; --ink:#2B2622; --ink-soft:#4E4640;
+  --rose:#D9C3C1; --sable:#E3D3AE; --mer:#B9C7D0; --mer-line:#8FA5B3; --bleu:#2F4B8A; --terre:#8E5E50;
+  --s3:#E9EDEE; --s4:#E2E8EA; --s5:#D6DFE3; --s6:#C9D4DA;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--sand);color:var(--ink);font-family:'Lora',Georgia,serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--ink)}
+a:hover{color:var(--bleu)}
+h1,h2,h3{font-family:'Comfortaa',system-ui,sans-serif;font-weight:600;margin:0}
+p{margin:0}
+.hand{font-family:'Mynerve',cursive;color:var(--bleu);display:inline-block;transform:rotate(-2deg);line-height:1.2}
+.sign{font-family:'Mrs Saint Delafield',cursive;color:var(--bleu);line-height:1}
+.fr{font-style:normal}
+.cut1{clip-path:polygon(2% 8%,97% 0,100% 90%,4% 100%)}
+.cut2{clip-path:polygon(0 3%,100% 10%,96% 100%,3% 94%)}
+.cut3{clip-path:polygon(4% 0,100% 5%,98% 96%,0 100%)}
+.btn{display:inline-block;font-family:'Comfortaa',sans-serif;font-size:16px;text-decoration:none;padding:15px 28px;border:0;cursor:pointer;text-align:center}
+.btn-dark{background:var(--ink);color:var(--paper)}
+.btn-dark:hover{color:var(--paper);background:#3d3631}
+.tilt-l{transform:rotate(-1.5deg)}
+.tag{display:inline-block;font-family:'Comfortaa',sans-serif;font-size:13px;padding:5px 12px;align-self:flex-start}
+.t-profs{background:var(--rose)} .t-eleves{background:var(--mer)} .t-tous{background:var(--sable)}
+.hl{display:inline-block;padding:2px 14px;transform:rotate(-2deg)}
+:focus-visible{outline:2px solid var(--bleu);outline-offset:3px}
+
+/* шапка */
+.top{background:var(--sand);padding:0 24px;position:sticky;top:0;z-index:10;border-bottom:1px solid rgba(43,38,34,.08)}
+.top-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:8px 0}
+.logo{display:block;line-height:0}
+.nav{display:flex;gap:30px;font-family:'Comfortaa',sans-serif;font-size:15px}
+.nav a{text-decoration:none;padding:6px 0}
+.burger{display:none;width:44px;height:44px;border:0;background:transparent;padding:0;cursor:pointer;align-items:center;justify-content:center}
+
+/* разделы */
+.sec{padding:56px 24px 96px;scroll-margin-top:70px}
+.wave{display:block;width:100%;height:60px}
+.inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:200px minmax(0,1fr);gap:32px}
+.marge{display:flex;flex-direction:column;gap:12px;border-right:1px solid rgba(43,38,34,.18);padding-right:20px;align-self:start}
+.marge .num{font-family:'Comfortaa',sans-serif;font-size:13px;letter-spacing:2px}
+.marge .hand{font-size:22px}
+.marge .note{font-size:13px;line-height:1.5;opacity:.8}
+.content{display:flex;flex-direction:column;gap:22px;min-width:0}
+.sec h2{font-size:34px;line-height:1.2}
+.intro{color:var(--ink-soft);max-width:620px}
+
+/* 01 */
+.s1{background:var(--sand);padding-top:48px}
+.s1 h1{font-size:clamp(32px,5vw,58px);line-height:1.18}
+.s1 .lead{font-size:19px;color:var(--ink-soft);max-width:600px}
+.s1 .me{font-size:15px;color:var(--ink-soft);max-width:560px;padding-left:14px;border-left:2px solid var(--mer)}
+.s1 .me a{font-family:'Comfortaa',sans-serif;font-size:14px;white-space:nowrap}
+.s1 .row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.s1 .sign{font-size:52px;margin-left:8px}
+
+/* 02 редакции */
+.s2{background:var(--paper)}
+.editions{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.edition{background:var(--card);padding:30px;display:flex;flex-direction:column;gap:16px}
+.edition h3{font-size:26px}
+.edition .who{color:var(--ink-soft);font-size:16px}
+.rubs{list-style:none;margin:0;padding:0}
+.rubs li{display:flex;gap:16px;align-items:center;padding:14px 0;border-top:1px solid rgba(43,38,34,.12)}
+.rubs svg{flex:0 0 48px;width:48px;height:48px}
+.rubs b{display:block;font-family:'Comfortaa',sans-serif;font-weight:600;font-size:17px}
+.rubs span{font-size:15px;color:var(--ink-soft)}
+.edition .go{font-family:'Comfortaa',sans-serif;font-size:15px}
+
+/* 03 материалы */
+.s3{background:var(--s3)}
+.filters{display:flex;flex-direction:column;gap:12px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{font-family:'Comfortaa',sans-serif;font-size:15px;padding:10px 18px;border:0;background:var(--card);color:var(--ink);cursor:pointer;min-height:44px}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.chip:nth-child(odd){transform:rotate(1.2deg)} .chip:nth-child(even){transform:rotate(-1.2deg)}
+.chips-label{font-size:13px;color:var(--ink-soft)}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.card{display:flex;flex-direction:column;gap:10px}
+.cover{aspect-ratio:3/4;background:var(--card);position:relative;overflow:hidden;padding:20px}
+.cover svg{position:absolute;inset:0;width:100%;height:100%}
+.cover h3{position:relative;font-size:22px;line-height:1.2}
+.cover .hand{position:relative;font-size:18px;margin-top:6px;display:block;transform:none}
+.card .rub{font-size:14px;color:var(--ink-soft);font-style:italic}
+.soon{font-family:'Mynerve',cursive;color:var(--bleu);font-size:18px}
+.empty{padding:28px;background:var(--card);color:var(--ink-soft)}
+.swipe-hint{display:none}
+
+/* 04 feuilleton */
+.s4{background:var(--s4)}
+.feuil{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:32px;align-items:center}
+.feuil .text{display:flex;flex-direction:column;gap:16px}
+.chapters{display:flex;gap:10px;align-items:flex-end}
+.chapters svg{flex:1;height:auto}
+
+/* 05 стоянка */
+.s5{background:var(--s5)}
+
+/* 06 капитан */
+.s6{background:var(--s6)}
+.captain{display:flex;flex-wrap:wrap;gap:40px;align-items:center}
+.portrait{flex:0 0 220px;height:270px;position:relative}
+.portrait .back{position:absolute;inset:-8px;background:var(--sable);transform:rotate(4deg)}
+.portrait .front{position:absolute;inset:0;background:var(--card);transform:rotate(-2deg);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.portrait img{width:100%;height:100%;object-fit:cover}
+.captain .text{flex:1 1 300px;display:flex;flex-direction:column;gap:12px}
+.captain p{color:#2E3A42}
+.captain .sign{font-size:50px}
+
+/* 07 подвал */
+.foot{background:var(--bleu);color:var(--paper);padding:48px 24px 56px;position:relative;overflow:hidden}
+.foot .marge{border-color:rgba(244,240,230,.3)}
+.foot .marge .hand{color:#DCE3E6}
+.foot a{color:var(--paper)}
+.foot .word{font-family:'Mynerve',cursive;font-weight:400;font-size:38px;line-height:1.1}
+.foot .links{display:flex;flex-wrap:wrap;gap:22px;font-family:'Comfortaa',sans-serif;font-size:14px}
+.foot .algue{position:absolute;right:8%;bottom:0;width:80px;height:auto}
+
+/* телефон */
+@media (max-width:760px){
+  body{font-size:16px}
+  .nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--sand);flex-direction:column;gap:0;padding:4px 24px 16px;border-bottom:1px solid rgba(43,38,34,.15)}
+  .nav.open{display:flex}
+  .nav a{padding:13px 0;font-size:17px}
+  .burger{display:flex}
+  .sec{padding:28px 20px 56px}
+  .wave{height:30px}
+  .inner{grid-template-columns:1fr;gap:18px}
+  .marge{flex-direction:row;align-items:center;gap:10px;border-right:0;border-bottom:1px solid rgba(43,38,34,.18);padding:0 0 10px}
+  .marge .note{display:none}
+  .marge .hand{font-size:19px}
+  .marge svg{margin-left:auto;width:42px;height:auto}
+  .foot .marge svg{display:none}
+  .sec h2{font-size:25px}
+  .s1 .row{flex-direction:column;align-items:stretch}
+  .s1 .sign{font-size:44px;text-align:right;margin:0}
+  .editions{grid-template-columns:1fr}
+  .edition{padding:22px}
+  .chips{flex-wrap:nowrap;overflow-x:auto;margin:0 -20px;padding:2px 20px 4px;scrollbar-width:none}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{flex:0 0 auto}
+  .cards{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin:0 -20px;padding:0 20px 6px;scrollbar-width:none}
+  .cards::-webkit-scrollbar{display:none}
+  .card{flex:0 0 74%;scroll-snap-align:start}
+  .swipe-hint{display:block;font-size:15px}
+  .feuil{grid-template-columns:1fr}
+  .portrait{margin:0 auto}
+  .btn{width:100%}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+<style>
+.back{font-family:'Comfortaa',sans-serif;font-size:15px;text-decoration:none;align-self:flex-start;padding:6px 0}
+.page{background:var(--s3);padding-top:40px}
+</style>
+<style>
+.trainers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.trainer h3{font-size:26px}
+.page h1{font-size:34px}
+.nav a.on{border-bottom:2px solid var(--ink)}
+@media (max-width:760px){.trainers{grid-template-columns:1fr}.page h1{font-size:27px}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <a href="../" class="logo" aria-label="aulcours — на главную">
+      <svg width="140" height="58" viewBox="30 0 360 175" role="img" aria-label="aulcours">
+        <path d="M176.2 12.4 L175.4 13.4 L173.4 17.9 L171.1 27.2 L170.3 55.8 L169.9 55.4 L167.4 47.8 L165.9 45.2 L163.7 42.7 L161.8 41.7 L160.2 41.0 L157.7 41.2 L156.1 42.1 L156.8 46.8 L158.4 51.0 L167.2 70.0 L168.8 79.2 L168.3 79.2 L165.4 76.7 L162.0 74.3 L156.3 71.9 L153.2 71.5 L148.3 71.7 L147.6 72.6 L147.0 74.9 L147.4 77.1 L148.7 79.8 L150.6 82.4 L153.9 84.7 L160.2 87.3 L165.4 88.2 L169.3 88.1 L169.8 88.7 L171.1 102.4 L170.8 138.0 L171.2 149.0 L171.8 150.0 L175.6 149.7 L173.4 127.0 L173.0 89.5 L172.1 70.5 L172.8 69.7 L184.6 64.4 L190.4 60.5 L195.6 55.6 L198.7 49.6 L198.4 48.6 L194.2 46.9 L191.4 46.9 L187.1 47.3 L181.0 49.8 L173.5 54.9 L178.6 37.7 L180.4 27.5 L180.2 22.6 L179.6 18.5 L178.3 15.2 Z" fill="#2F4B8A"/>
+        <text x="160" y="140" text-anchor="end" font-family="Mynerve, cursive" font-size="62" fill="#2B2622">au</text>
+        <text x="188" y="140" font-family="Mynerve, cursive" font-size="62" fill="#2B2622">cours</text>
+        <path d="M40 162 C 80 152, 120 170, 160 160 C 200 150, 240 168, 280 158 C 320 148, 350 162, 370 156" fill="none" stroke="#8FA5B3" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+    </a>
+    <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="menu">
+      <svg width="26" height="18" viewBox="0 0 26 18" aria-hidden="true"><g stroke="#2B2622" stroke-width="2" stroke-linecap="round"><line x1="1" y1="2" x2="25" y2="1"/><line x1="1" y1="9" x2="25" y2="9"/><line x1="1" y1="16" x2="25" y2="17"/></g></svg>
+    </button>
+    <nav class="nav" id="menu" aria-label="Основное меню">
+      <a href="../?aud=profs#materiaux">profs</a>
+      <a href="../?aud=eleves#materiaux">élèves</a>
+      <a href="./" class="on" aria-current="page">exercices</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="sec page">
+  <div class="inner">
+    <div class="marge">
+      <svg width="70" height="70" viewBox="0 0 80 80" aria-hidden="true"><path d="M12 70 L 52 22" stroke="#8E5E50" stroke-width="5" stroke-linecap="round"/><path d="M50 26 C 52 10, 70 4, 74 8 C 78 12, 72 30, 56 30 Z" fill="#B9C7D0"/><path d="M0 80 L 0 70 C 20 64, 40 76, 60 70 C 70 67, 76 70, 80 69 L 80 80 Z" fill="#E3D3AE"/></svg>
+      <span class="hand">les manœuvres</span>
+      <span class="note">тренировка экипажа: отработать форму до автоматизма</span>
+    </div>
+    <div class="content">
+      <a href="../" class="back">← На главную</a>
+      <h1>Тренажёры</h1>
+      <p class="intro">Бесплатные онлайн-тренажёры: короткая отработка формы между уроками. Новые появляются по мере готовности — о них пишу в Telegram.</p>
+      <div class="trainers">
+        <article class="edition trainer cut3">
+          <span class="tag t-eleves cut2" style="transform:rotate(-2deg)">élèves · A1–A2</span>
+          <h3 lang="fr">Le présent</h3>
+          <p class="who">Спряжение 59 глаголов: карточки с проверкой, ошибки собираются в «Сложное».</p>
+          <a href="../eleves/present/" class="btn btn-dark cut2 tilt-l" style="align-self:flex-start">Открыть тренажёр</a>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<svg class="wave" viewBox="0 0 1280 60" preserveAspectRatio="none" aria-hidden="true" style="background:#E9EDEE"><path d="M0 60 L 0 26 C 180 8, 360 44, 560 24 C 760 4, 960 40, 1160 20 C 1220 14, 1260 20, 1280 18 L 1280 60 Z" fill="#2F4B8A"/></svg>
+
+<footer class="foot">
+  <svg class="algue" viewBox="140 6 66 148" aria-hidden="true"><path d="M176.2 12.4 L175.4 13.4 L173.4 17.9 L171.1 27.2 L170.3 55.8 L169.9 55.4 L167.4 47.8 L165.9 45.2 L163.7 42.7 L161.8 41.7 L160.2 41.0 L157.7 41.2 L156.1 42.1 L156.8 46.8 L158.4 51.0 L167.2 70.0 L168.8 79.2 L168.3 79.2 L165.4 76.7 L162.0 74.3 L156.3 71.9 L153.2 71.5 L148.3 71.7 L147.6 72.6 L147.0 74.9 L147.4 77.1 L148.7 79.8 L150.6 82.4 L153.9 84.7 L160.2 87.3 L165.4 88.2 L169.3 88.1 L169.8 88.7 L171.1 102.4 L170.8 138.0 L171.2 149.0 L171.8 150.0 L175.6 149.7 L173.4 127.0 L173.0 89.5 L172.1 70.5 L172.8 69.7 L184.6 64.4 L190.4 60.5 L195.6 55.6 L198.7 49.6 L198.4 48.6 L194.2 46.9 L191.4 46.9 L187.1 47.3 L181.0 49.8 L173.5 54.9 L178.6 37.7 L180.4 27.5 L180.2 22.6 L179.6 18.5 L178.3 15.2 Z" fill="#B9C7D0"/></svg>
+  <div class="inner" style="position:relative">
+    <div class="marge">
+      
+      <span class="hand">les profondeurs</span>
+    </div>
+    <div class="content">
+      <div class="word">au<span style="color:#B9C7D0">l</span>cours</div>
+      <div class="links">
+        <!-- ЗАМЕНИТЕ # на свои ссылки -->
+        <a href="#">Telegram</a>
+        <a href="#">Instagram</a>
+      </div>
+      <span class="hand" style="color:#DCE3E6;font-size:22px">à bientôt&nbsp;!</span>
+      <small style="opacity:.75">© <span id="year">2026</span> aulcours.com</small>
+    </div>
+  </div>
+</footer>
+
+<script>
+var burger=document.querySelector(".burger"),menu=document.getElementById("menu");
+burger.addEventListener("click",function(){var o=menu.classList.toggle("open");burger.setAttribute("aria-expanded",o?"true":"false");});
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
